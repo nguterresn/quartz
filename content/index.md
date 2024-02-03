@@ -37,7 +37,6 @@ Currently working on [BattleButBot](https://github.com/nguterresn/battlebutbot)
 <!-- - [Year 2021 Recapitulation](year-2021-recap.md) -->
 - [Favourite Phrases - Discourses and Selected Writings by Epictetus](discourses-and-selected-writings.md)
 - [My process to design a boost converter](boost-converter.md)
-- [Changing website workflow with Mkdocs](changing-website-workflow.md)
 - [Arduino Due SPI Slave Mode](arduino-spi-slave.md)
 - [Using pinout Python library to create support documentation](documentation-python-script.md)
 - [How to create a directory generator with Python for your ideas](version-control-script.md)
