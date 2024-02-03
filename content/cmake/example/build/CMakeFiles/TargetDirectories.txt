@@ -1,0 +1,6 @@
+/Users/nunonogueira/Projectos/WebSite/my-project/docs/content/cmake/example/build/CMakeFiles/test.dir
+/Users/nunonogueira/Projectos/WebSite/my-project/docs/content/cmake/example/build/CMakeFiles/edit_cache.dir
+/Users/nunonogueira/Projectos/WebSite/my-project/docs/content/cmake/example/build/CMakeFiles/rebuild_cache.dir
+/Users/nunonogueira/Projectos/WebSite/my-project/docs/content/cmake/example/build/test_lib/CMakeFiles/test_lib.dir
+/Users/nunonogueira/Projectos/WebSite/my-project/docs/content/cmake/example/build/test_lib/CMakeFiles/edit_cache.dir
+/Users/nunonogueira/Projectos/WebSite/my-project/docs/content/cmake/example/build/test_lib/CMakeFiles/rebuild_cache.dir
