@@ -3,6 +3,7 @@ title: How to create a directory generator with Python for your ideas
 tags:
   - Python
   - Git
+date: "2021-03-28"
 ---
 
 Ever since I remember, I've always struggle with the fact that I couldn't manage very well my own ideas. The version control was there on the code files, but not on the others, like 3d design files or gerber files. This mess results in outdated files, while others were updated since the start. I would end up with an updated firmware with an outdated pcb, causing friction between my brain cells 🤧

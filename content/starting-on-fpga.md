@@ -2,6 +2,7 @@
 title: Starting on FPGA...
 tags:
   - FPGA
+date: "2021-01-05"
 ---
 
 I'm now starting dealing with FPGA on my daily basis, so I thought it would be the perfect time to keep my journey with this technology all documented.

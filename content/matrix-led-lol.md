@@ -3,6 +3,7 @@ title: Matrix Led telling how good you are at playing League of Legends
 tags:
   - Python
   - Arduino
+date: "2022-08-28"
 ---
 
 Recently I acquired one of the matrix led panels selling on [Aliexpress](https://pt.aliexpress.com/wholesale?catId=0&initiative_id=AS_20210120102931&SearchText=1088as) or Ebay and started to print some stuff.

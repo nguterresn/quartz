@@ -2,6 +2,7 @@
 title: FPGA and Avalon Interfaces
 tags:
   - FPGA
+date: "2021-01-10"
 ---
 
 As I said in a previous post, I have been working with the Cyclone GX Starter kit FPGA, which has come up a really nice surprise as a *way* of development. I mean way of development because it is very different compared to the normal way of development of embedded software I'm used to.

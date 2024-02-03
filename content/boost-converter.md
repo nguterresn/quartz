@@ -3,6 +3,7 @@ title: My process to design a boost converter
 tags:
   - Electronics
   - PCB Design
+date: "2021-12-04"
 ---
 
 I do have some skills on KiCad but eveything I do is normally very basic - has no requirements and allows me to design the board with a lack of responsability or guidelines to follow.
@@ -97,8 +98,6 @@ Black PCBs look amazing!
 1. The USB C interface doesnt support Power Delivery, and so it doesn't work if connected to a MacBook Pro, for instance. This is quite concerning since the world is shifting into using PD more and more. I want to make this more universal.
 2. Two 12V output are not as usefull as one 12V plus other one at 5V. Changing this would make the product support more types of fans.
 3. Portability is key nowdays. If this is small I can make it portable as well. I don't mean it to walk around with this on my pocket, but for organizing purposes - it is way easier if the product is just _plug and play_.
-
-(04/12/2021)
 
 <!-- ### Update and foreshadowing of the new upcoming version of the board
 

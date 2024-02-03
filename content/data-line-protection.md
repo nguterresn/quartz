@@ -2,6 +2,7 @@
 title: Data Line Protection using Diodes - How to protect your Microcontroller I/O
 tags:
   - Electronics
+date: "2022-05-14"
 ---
 
 ### Diode protection
@@ -119,5 +120,3 @@ $$ P = 4.7V * 0,001A$$
 $$ P = 4.7mW $$
 
 By re-thinking the design, we can decrease the power dissipation of our design and turn everything more efficient!
-
-(14/05/2021)

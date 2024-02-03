@@ -2,6 +2,7 @@
 title: Control the ka3005p power supply with an Arduino Due
 tags:
   - Arduino
+date: "2023-05-06"
 ---
 
 There a ton of [repositories available online](https://github.com/Nicoretti/ka3005p) on how to control the ka3005p power supply according to its command sheet. There none on how to control it using an embedded device, such as a microcontroller. You can take a look into the library [here](https://github.com/nguterresn/due-ka3005p/tree/master).

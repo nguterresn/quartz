@@ -2,6 +2,7 @@
 title: Choosing MOSFET according to motor specifications
 tags:
   - Electronics
+date: "2021-03-04"
 ---
 
 # Choosing MOSFET according to motor specifications

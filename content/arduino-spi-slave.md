@@ -1,8 +1,8 @@
 ---
 title: Arduino Due Slave Mode
-draft: false
 tags:
   - Arduino
+date: "2021-08-21"
 ---
 
 Recently I had the chance of spending time programming an Arduino Due.

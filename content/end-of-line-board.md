@@ -4,6 +4,7 @@ tags:
   - PCB Design
   - CAD Design
   - Access Control
+date: "2023-06-29"
 ---
 
 I think I've started to work on a [End of Line testing board](https://github.com/nguterresn/end-of-line-board) back in the summer of 2022, but never actually used it or wrote about it. Recently, I've revisited this in order to make it a _releasable_ product.

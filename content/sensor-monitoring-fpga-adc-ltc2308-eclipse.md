@@ -2,6 +2,7 @@
 title: Sensor Monitoring using FPGA connected to ADC (LTC2308) - Eclipse Side
 tags:
   - FPGA
+date: "2021-01-06"
 ---
 
 ## From the Eclipse side...

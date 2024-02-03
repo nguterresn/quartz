@@ -2,6 +2,7 @@
 title: Using pinout Python library to create support documentation
 tags:
   - Documentation
+date: "2021-09-10"
 ---
 
 Somewhere and at some point during this month I saw this [Python library](https://pinout.readthedocs.io/en/latest/) called *pinout.*

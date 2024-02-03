@@ -2,6 +2,7 @@
 title: Some favourite phrases in Discourses and Selected Writings by Epictetus
 tags:
   - Philosophy
+date: "2021-12-28"
 ---
 
 1.
@@ -42,6 +43,4 @@ As for you, lead someone to the truth and you will find that he can follow.
 9.
 
 > No one, you realize, fears Caeser himself, it is death, exile, dispossession, jail and disenfranchisement that they are afraid of. Nor is Caeser loved, unless by chance he is personally deserving; we love money, a tribuneship, a military command or consulship. But when we love, hate or fear such things, then the people who administer them are bound to become our masters.
-
-###### (28/12/2021)
 

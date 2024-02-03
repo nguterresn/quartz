@@ -2,6 +2,7 @@
 title: Sensor Monitoring using FPGA connected to ADC (LTC2308) - Quartus Side
 tags:
   - FPGA
+date: "2021-01-06"
 ---
 
 ### (Or how to use the Cyclone V board's ADC - LTC2308)
