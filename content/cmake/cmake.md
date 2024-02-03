@@ -28,19 +28,19 @@ And a `test.c` file like this:
 
 int add(int a, int b)
 {
-	return a + b;
+  return a + b;
 }
 
 int main()
 {
-	int a, b;
+  int a, b;
 
-	printf("Enter number a: ");
-	scanf("%d", &a);
-	printf("Enter number b: ");
-	scanf("%d", &b);
+  printf("Enter number a: ");
+  scanf("%d", &a);
+  printf("Enter number b: ");
+  scanf("%d", &b);
 
-	printf("Adding result -> %d", add(a, b));
+  printf("Adding result -> %d", add(a, b));
 }
 ```
 
@@ -70,8 +70,8 @@ Once this is done, you will end up with something like this:
 
 ```md
 -- build
-	-- Makefile
-	-- test
+  -- Makefile
+  -- test
 -- CMakeLists.txt
 -- test.c
 ```
@@ -94,8 +94,8 @@ Adding a library is easy. Let's start with this directory structure:
 -- CMakeLists.txt
 -- test.c
 -- /test_lib
-	-- test_lib.c
-	-- test_lib.h
+  -- test_lib.c
+  -- test_lib.h
 ```
 
 Inside `test.c`:
@@ -106,19 +106,19 @@ Inside `test.c`:
 
 int add(int a, int b)
 {
-	return a + b;
+  return a + b;
 }
 
 int main()
 {
-	int a, b;
+  int a, b;
 
-	printf("Enter number a: ");
-	scanf("%d", &a);
-	printf("Enter number b: ");
-	scanf("%d", &b);
+  printf("Enter number a: ");
+  scanf("%d", &a);
+  printf("Enter number b: ");
+  scanf("%d", &b);
 
-	printf("Mux result -> %d", mux(a, b)); // Uses `mux` method
+  printf("Mux result -> %d", mux(a, b)); // Uses `mux` method
 }
 ```
 
@@ -164,11 +164,11 @@ This is your project structure:
 ```md
 CMakeLists.txt
 -- /src
-	-- test.c
+  -- test.c
 -- /test_lib
-	-- test_lib.c
-	-- test_lib.h
-	-- CMakeLists.txt
+  -- test_lib.c
+  -- test_lib.h
+  -- CMakeLists.txt
 ```
 
 The folder `src` has the file we want to execute and `test.c` contains the `int main()` function.
