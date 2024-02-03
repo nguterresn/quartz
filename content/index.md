@@ -10,7 +10,7 @@ microcontrollers and real time operating systems with a strong link between
 the device and the cloud. I successfully build, test and maintain code for
 systems on the field. My hobbyist side also works with PCB & CAD Design.
 
-Check my <a>_curriculum vitae_</a>.
+Check my <a href="download/cv.pdf" target="_blank">_curriculum vitae_</a>.
 
 ---
 
