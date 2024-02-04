@@ -4,7 +4,7 @@ tags:
   - Robotics
   - ESP32
   - Javascript
-  - Webserver
+  - WebServer
   - BattleButBot
 date: "2024-02-04"
 ---
