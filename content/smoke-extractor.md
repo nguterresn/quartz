@@ -168,3 +168,9 @@ Addionally, will add the option to purchase the Bill of Materials straight from 
 
 
 ![Smoke extractor v2 back](img/smokeextracotrv2back.jpg)
+
+### Version 2.05
+
+Two boost converters is stupid — single boost converter approach. USB-C can only charge. SMD button was from a really bad quality (hard to click), replaced by a classic TH 6x6mm.
+
+![Smoke extractor 2v05 Front](SE_2v05.jpg)
