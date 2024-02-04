@@ -18,6 +18,7 @@ Currently working on [BattleButBot](https://github.com/nguterresn/battlebutbot)
 
 ### On 2024
 
+- [A web browser robot controller](browser-robot-controller.md)
 - [How to simulate LGVL using SDL2 on VSCode (MacOS)](lgvl-simulator-vscode-macos.md)
 
 ### On 2023
