@@ -171,6 +171,6 @@ Addionally, will add the option to purchase the Bill of Materials straight from 
 
 ### Version 2.05
 
-Two boost converters is stupid — single boost converter approach. USB-C can only charge. SMD button was from a really bad quality (hard to click), replaced by a classic TH 6x6mm.
+Two boost converters is stupid — single boost converter approach. USB-C can only charge. SMD button was from a really bad quality (hard to click), replaced by a classic TH 6x6mm. 3mm LEDs are a waste of space, current and money, replaced by simple 0603 SMD ones.
 
 ![Smoke extractor 2v05 Front](SE_2v05.jpg)
