@@ -29,7 +29,7 @@ graph TD;
   B[Robot Controller Web Client]-- update(x, y) -->A[ESP32 Web Server];
 ```
 
-Both, X and Y are the result of the position of the joysticks. The left joystick will update `x` whereas the right will update `y`. To avoid having two requests, the values are cached and sent together every 50ms to the ESP32.
+Both, X and Y are the result of the position of the [joysticks](https://github.com/bobboteck/JoyStick). The left joystick will update `x` whereas the right will update `y`. To avoid having two requests, the values are cached and sent together every 50ms to the ESP32.
 
 ```mermaid
 graph TD;
