@@ -9,8 +9,6 @@ date: "2022-07-31"
 
 One of my [2022 goals](year-2021-recap.md) was to _create_ something - a product or a service. Since then, I've been working on a personal, portable and small **smoke extractor**.
 
-![Smoke extractor gif](img/se_gif.gif)
-
 I started learning about DC/DC Boost Converters when I noticed the fans that required more power were not supplied with 5V, they were, instead, supplied with 12V or 24V. This finding pushed me into learning about [boost converter's hardware design](boost-converter.md) and requirements which would lead to my end goal.
 
 ### Design and challenges
@@ -36,6 +34,14 @@ After the first printing attempt, I realized right away this was not the best id
 
 Also, if you were attentive, you could notice the back from the first renders didn't have the honeycomb pattern. The older back was way too weak and was causing the fan to bend backwards, mainly caused by the screws force on the bottom. The new back is robust enough.
 
+### Version 1.0
+
+The first MVP was created, the version 1.0 of the smoke extractor.
+
+![Smoke extractor gif](img/se_gif.gif)
+
+Following changes involve turning the smoke extractor a portable device.
+
 ### One smart fool
 
 Until this point, the project looks awesome, right? I thought so. However, this project was (and is) supposed to be open-source but there are no files or documentation about it. Let me explain.
@@ -56,38 +62,33 @@ It is time to have this touch.
 
 ### Supply chain and product improvements saved me from self disappointment
 
-Supply chain issues are usually very bad thing and everyone working at a tech company knows what I am talking about. This could be my case if I didn't have to redesign everything from scratch anyway.
+Supply chain issues are usually bad thing and everyone who is working at a tech company knows what I am talking about. This could be my case if I didn't have to redesign everything from scratch anyway.
 
 Turns out, [the boost converter I have been using the whole time](https://www.digikey.se/en/products/detail/diodes-incorporated/PAM2421AECADJR/4033256), is, for everyone's surprise, out of stock. It _sucks_!... but, comes in the right time as well!
 
-Let's also take this chance to look back and to polish the prototype edges.
+Let's also take this chance to look back and to polish some edges.
 
-### Electrical issues
+### Version 2.0
 
-As for today, the product, in order to work correctly, needs to **draw around 600mA at 5V**. This might change with the next boost converter chip, but this is a good starting point to aim for **80% of efficiency**.
+The [version 1.0](#version-10) worked great.
 
-600mA, at most of the USB default ports, is already too much, since most of the USB default ports can only provide current from 100mA to 500mA. When I connected the smoke extractor, fully assembled, to my computers USB dock, it was causing my desk light (also powered by the same dock), to flicker every half a second. Something was not right, pretty obvious huh!
+The version 2.0 will include:
 
-To know more about this issue, I created a post on [Reddit](https://www.reddit.com/r/AskElectronics/comments/vs3w11/question_about_current_draw_from_usb_hub_and/). I wanted to know exactly what was happening and what was I missing. Luckily, an amazing person decided to help me and explain why my desk lamp was flickering:
+* A lithium 18350 battery.
+* A charger circuit and respective safety circuit (discharge protection, overcharge protection etc).
+* A battery level indicator.
 
-> Probably overcurrent detection triggering, then resetting and waiting a reasonable time for inrush current to finish before triggering again.
-
-Easy explanation, thanks [triffid_hunter](https://www.reddit.com/user/triffid_hunter/)!
-
-As I was reading his explanation, I knew this had to be fixed. How could I fix this?
-
-Nevertheless, this might not be the problem I think it is. The next board will be battery powered and charged through USB-C. Its normal operation does not include the USB-C input to be the main source power.
-
-### Next changes on version 2.0
-
-For the version v2.0, if I'm even allowed to call it that, the smoke extractor will include a lithium 18350 battery, the charger circuit and consecutive safety circuit (discharge, overcharge, etc) and a battery level button followed by some tiny lights to return feedback to the user.
 Addionally, will add the option to purchase the Bill of Materials straight from [JLCPCB](https://jlcpcb.com/parts).
 
 ![Smoke extractor v2 front](img/smokeextractorv2.jpg)
 
+The lithium battery will be placed on the PCB back and will be soldered likewise.
+
 ![Smoke extractor v2 back](img/smokeextracotrv2back.jpg)
 
 ### Version 2.05
+
+There were some changes since the [version 2.0](#version-20), but mostly just small improvements.
 
 I've changed the design a bit. It covers the fan completely and makes the enclosure slightly more sturdy.
 
@@ -116,8 +117,10 @@ After holding it for a bit, I didn't like the [previous enclosure for the smoke 
 
 I've added back the [original back part](#design-and-challenges).
 
+![Final CAD Design](../img/98bdded2-862f-4d10-87c1-c84e715877d7.png)
+
 ### The end
 
-This [previous iteration](#version-206) represents the final revision of the board. I do not intend to make further revisions beyond this point. It has been more than one year since I've started working on this, with a few breaks in the middle.
+The [previous iteration](#version-206) represents the final revision of the board. I do not intend to make further revisions beyond this point. It has been more than one year since I've started working on this, with a few breaks in the middle.
 Overall, I've learned a lot. Not only skill wise but also about planning and organization. Planning is key and simplicity helps — it can save so much time.
 I made this for myself, but I hope someone can look at this product and find it useful.
