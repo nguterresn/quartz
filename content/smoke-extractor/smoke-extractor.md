@@ -155,7 +155,7 @@ The entire project is open-source. You can find it [here](https://github.com/ngu
 
 Below is a list of what you need. Let's start with the PCB:
 
-- Take the [Bill of Materials] and order from [LCSC](https://www.lcsc.com). (https://github.com/nguterresn/smoke-extractor/blob/master/pcb/1v1/jlcpcb/production_files/BOM-smoke_extractorV1_1.csv)
+- Take the [Bill of Materials](https://github.com/nguterresn/smoke-extractor/blob/master/pcb/1v1/jlcpcb/production_files/BOM-smoke_extractorV1_1.csv) and order from [LCSC](https://www.lcsc.com).
 - Take the [compressed gerber files](https://github.com/nguterresn/smoke-extractor/blob/master/pcb/1v1/jlcpcb/production_files/GERBER-smoke_extractorV1_1.zip) and order the PCB from [JLCPCB](https://jlcpcb.com)
 
 To 3D print the [enclosure](https://github.com/nguterresn/smoke-extractor/tree/master/stl/1v1), I would recommend to print it vertically with supports only where the PCB fits.
