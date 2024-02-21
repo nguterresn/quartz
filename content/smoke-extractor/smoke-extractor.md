@@ -117,7 +117,9 @@ After holding it for a bit, I didn't like the [previous enclosure for the smoke 
 
 I've added back the [original back part](#design-and-challenges).
 
-![Final CAD Design](../img/98bdded2-862f-4d10-87c1-c84e715877d7.png)
+![Final CAD Design front](../img/FumeExtractor_2024-Feb-21_08-16-03PM-000_CustomizedView7009059250.png)
+
+![Final CAD Design back](../img/FumeExtractor_2024-Feb-21_08-10-57PM-000_CustomizedView6794781722.png)
 
 ### Challenges
 
@@ -138,10 +140,10 @@ It does take a bit of time, but once all the bodies are in the same project, the
 
 ### Lessons
 
-- Plan a MVP: a MVP needs X, do not add Y. Schedule X.
-- Minimize the number of revisions, keep it simple. Don't 'try' revisions, create revisions only if needed, otherwise finish the project.
-- While designing the PCB, minimize the amount of different components: instead of using 4k7 annd 5k1 resistors, use only 5k1 instead (when possible). Reduces the assembly time.
-- Use [LCSC](https://www.lcsc.com) instead of Digikey. It is cheaper and KiCad has plugins to integrate JLCPCB and LCSC into it. Each component has an ID and that's it. Generate BOM and order in seconds.
+* Plan a MVP: a MVP needs X, do not add Y. Schedule X.
+* Minimize the number of revisions, keep it simple. Don't 'try' revisions, create revisions only if needed, otherwise finish the project.
+* While designing the PCB, minimize the amount of different components: instead of using 4k7 annd 5k1 resistors, use only 5k1 instead (when possible). Reduces the assembly time.
+* Use [LCSC](https://www.lcsc.com) instead of Digikey. It is cheaper and KiCad has plugins to integrate JLCPCB and LCSC into it. Each component has an ID and that's it. Generate BOM and order in seconds.
 
 ### The end
 
@@ -155,11 +157,9 @@ The entire project is open-source. You can find it [here](https://github.com/ngu
 
 Below is a list of what you need. Let's start with the PCB:
 
-- Take the [Bill of Materials](https://github.com/nguterresn/smoke-extractor/blob/master/pcb/1v1/jlcpcb/production_files/BOM-smoke_extractorV1_1.csv) and order from [LCSC](https://www.lcsc.com).
-- Take the [compressed gerber files](https://github.com/nguterresn/smoke-extractor/blob/master/pcb/1v1/jlcpcb/production_files/GERBER-smoke_extractorV1_1.zip) and order the PCB from [JLCPCB](https://jlcpcb.com)
+* Take the [Bill of Materials](https://github.com/nguterresn/smoke-extractor/blob/master/pcb/1v1/jlcpcb/production_files/BOM-smoke_extractorV1_1.csv) and order from [LCSC](https://www.lcsc.com).
+* Take the [compressed gerber files](https://github.com/nguterresn/smoke-extractor/blob/master/pcb/1v1/jlcpcb/production_files/GERBER-smoke_extractorV1_1.zip) and order the PCB from [JLCPCB](https://jlcpcb.com)
 
 To 3D print the [enclosure](https://github.com/nguterresn/smoke-extractor/tree/master/stl/1v1), I would recommend to print it vertically with supports only where the PCB fits.
 
-- You can find the files for the enclosure at [Thinginverse](https://www.thingiverse.com/thing:6496883) or on the [repository](https://github.com/nguterresn/smoke-extractor/tree/master/stl/1v1).
-
-
+* You can find the files for the enclosure at [Thinginverse](https://www.thingiverse.com/thing:6496883) or on the [repository](https://github.com/nguterresn/smoke-extractor/tree/master/stl/1v1).
