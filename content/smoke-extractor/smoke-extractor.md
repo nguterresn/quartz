@@ -119,8 +119,47 @@ I've added back the [original back part](#design-and-challenges).
 
 ![Final CAD Design](../img/98bdded2-862f-4d10-87c1-c84e715877d7.png)
 
+### Challenges
+
+It is possible to split the challenges into two types: PCB Design and CAD Design. In neither of them I'm excellent and this project has forced me into learning more and get better at designing.
+
+As seen in the [first CAD design](#design-and-challenges), the enclosure is small and compact; the PCB fits perfectly below the fan. I wanted to keep this compactness a portable-battery-powered smoke extractor. In order to do this, I had to find a way to fit the 18350 battery holder, the USB-C Header and the Rocket switch in the same PCB. It sounds easy, but most of the PCB surface is covered with something in both sides, so through-hole components become a _no-go_ in most of the cases.
+
+Because it is easier and cheaper, most of the USB-C connectors are horizontal. Due to the space contraints, I had to take a [vertical USB-C connector](https://www.lcsc.com/product-detail/USB-Connectors_Korean-Hroparts-Elec-TYPE-C-31-M-15_C223908.html), design the symbol and its footprint.
+
+![Vertical USB-C](../img/IMG_8550.jpg)
+
+Second , the Rocket switch pins couldn't touch the lithium battery holder. Again — not so popular nor cheap — I had to find a [rocket switch](https://www.lcsc.com/product-detail/Rocker-Switches_ALPSALPINE-SDDJE10700_C358626.html) possible to fit in the same PCB as the battery holder.
+
+![Rocket Switch](../img/IMG_8549.jpg)
+
+Regarding the PCB design, these were the two biggest challenges. When it comes to CAD design I had to learn how to manage multiple bodies in the same project.
+It does take a bit of time, but once all the bodies are in the same project, the design develops smoothly.
+
+### Lessons
+
+- Plan a MVP: a MVP needs X, do not add Y. Schedule X.
+- Minimize the number of revisions, keep it simple. Don't 'try' revisions, create revisions only if needed, otherwise finish the project.
+- While designing the PCB, minimize the amount of different components: instead of using 4k7 annd 5k1 resistors, use only 5k1 instead (when possible). Reduces the assembly time.
+- Use [LCSC](https://www.lcsc.com) instead of Digikey. It is cheaper and KiCad has plugins to integrate JLCPCB and LCSC into it. Each component has an ID and that's it. Generate BOM and order in seconds.
+
 ### The end
 
 The [previous iteration](#version-206) represents the final revision of the board. I do not intend to make further revisions beyond this point. It has been more than one year since I've started working on this, with a few breaks in the middle.
 Overall, I've learned a lot. Not only skill wise but also about planning and organization. Planning is key and simplicity helps — it can save so much time.
 I made this for myself, but I hope someone can look at this product and find it useful.
+
+### Build one yourself
+
+The entire project is open-source. You can find it [here](https://github.com/nguterresn/smoke-extractor).
+
+Below is a list of what you need. Let's start with the PCB:
+
+- Take the [Bill of Materials] and order from [LCSC](https://www.lcsc.com). (https://github.com/nguterresn/smoke-extractor/blob/master/pcb/1v1/jlcpcb/production_files/BOM-smoke_extractorV1_1.csv)
+- Take the [compressed gerber files](https://github.com/nguterresn/smoke-extractor/blob/master/pcb/1v1/jlcpcb/production_files/GERBER-smoke_extractorV1_1.zip) and order the PCB from [JLCPCB](https://jlcpcb.com)
+
+To 3D print the [enclosure](https://github.com/nguterresn/smoke-extractor/tree/master/stl/1v1), I would recommend to print it vertically with supports only where the PCB fits.
+
+- You can find the files for the enclosure at [Thinginverse](https://www.thingiverse.com/thing:6496883) or on the [repository](https://github.com/nguterresn/smoke-extractor/tree/master/stl/1v1).
+
+
