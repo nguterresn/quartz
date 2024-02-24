@@ -9,7 +9,9 @@ date: "2022-07-31"
 
 One of my [2022 goals](year-2021-recap.md) was to _create_ something - a product or a service. Since then, I've been working on a personal, portable and small **smoke extractor**.
 
-[Skip explanation and check how to do it youself.](#do-it-yourself)
+> [!info] Before you continue reading
+>
+> If you came here looking how to build the smoke extractor, [skip the explanation and check how to do it youself.](#do-it-yourself)
 
 I started learning about DC/DC Boost Converters when I noticed the fans that required more power were not supplied with 5V, they were, instead, supplied with 12V or 24V. This finding pushed me into learning about [boost converter's hardware design](boost-converter.md) and requirements which would lead to my end goal.
 
