@@ -18,41 +18,40 @@ Currently working on [BattleButBot](https://github.com/nguterresn/battlebutbot)
 
 ### On 2024
 
-- [A web browser robot controller](browser-robot-controller.md)
-- [How to simulate LGVL using SDL2 on VSCode (MacOS)](lgvl-simulator-vscode-macos.md)
+* [Quick design of a Pet Water Fountain](pet-water-fountain.md)
+* [A web browser robot controller](browser-robot-controller.md)
+* [How to simulate LGVL using SDL2 on VSCode (MacOS)](lgvl-simulator-vscode-macos.md)
 
 ### On 2023
 
-- [The basics of CMake](cmake/cmake.md)
-- [Control the ka3005p power supply with an Arduino Due](psu-ka3005p-due.md)
-- [Board to help you test end of line on your access control system](end-of-line-board.md)
+* [The basics of CMake](cmake/cmake.md)
+* [Control the ka3005p power supply with an Arduino Due](psu-ka3005p-due.md)
+* [Board to help you test end of line on your access control system](end-of-line-board.md)
 
 ### On 2022
 
-- [How can you make your own portable Smoke Extractor](smoke-extractor.md)
-- [Data Line Protection using Diodes - How to protect your Microcontroller IO](data-line-protection.md)
-- [How to read a datasheet and how it can be misleading (MCP73827)](how-datasheets-can-be-misleading.md)
+* [How can you make your own portable Smoke Extractor](smoke-extractor.md)
+* [Data Line Protection using Diodes - How to protect your Microcontroller IO](data-line-protection.md)
+* [How to read a datasheet and how it can be misleading (MCP73827)](how-datasheets-can-be-misleading.md)
 
 ### On 2021
 
 <!-- - [Year 2021 Recapitulation](year-2021-recap.md) -->
-- [Favourite Phrases - Discourses and Selected Writings by Epictetus](discourses-and-selected-writings.md)
-- [My process to design a boost converter](boost-converter.md)
-- [Arduino Due SPI Slave Mode](arduino-spi-slave.md)
-- [Using pinout Python library to create support documentation](documentation-python-script.md)
-- [How to create a directory generator with Python for your ideas](version-control-script.md)
-- [Choosing MOSFET according to motor specifications](motor-mosfet-research.md)
-- [Compile, Program, Build and Run a FPGA using Python scripts](fpga-python-script.md)
-- [Matrix Led telling how good you are at playing League of Legends](matrix-led-lol.md)
+* [Favourite Phrases - Discourses and Selected Writings by Epictetus](discourses-and-selected-writings.md)
+* [My process to design a boost converter](boost-converter.md)
+* [Arduino Due SPI Slave Mode](arduino-spi-slave.md)
+* [Using pinout Python library to create support documentation](documentation-python-script.md)
+* [How to create a directory generator with Python for your ideas](version-control-script.md)
+* [Choosing MOSFET according to motor specifications](motor-mosfet-research.md)
+* [Compile, Program, Build and Run a FPGA using Python scripts](fpga-python-script.md)
+* [Matrix Led telling how good you are at playing League of Legends](matrix-led-lol.md)
 
 ### On 2020
 
-- [Sensor Monitoring using FPGA connected to ADC (LTC2308) - Eclipse Side](sensor-monitoring-fpga-adc-ltc2308-eclipse.md)
-- [Sensor Monitoring using FPGA connected to ADC (LTC2308) - Quartus Side](sensor-monitoring-fpga-adc-ltc2308.md)
-- [FPGA and Avalon Interfaces](fpga-and-avalon-interfaces.md)
-- [Starting on FPGA...](starting-on-fpga.md)
+* [Sensor Monitoring using FPGA connected to ADC (LTC2308) - Eclipse Side](sensor-monitoring-fpga-adc-ltc2308-eclipse.md)
+* [Sensor Monitoring using FPGA connected to ADC (LTC2308) - Quartus Side](sensor-monitoring-fpga-adc-ltc2308.md)
+* [FPGA and Avalon Interfaces](fpga-and-avalon-interfaces.md)
+* [Starting on FPGA...](starting-on-fpga.md)
 
 <!-- #### [**Some useful VS Code Extensions**](http://archive.guterresnogueira.com/content/usefultools/i.html) <span class="tag is-light is-rounded">Useful tools</span> -->
 <!-- #### [**About this website**](http://archive.guterresnogueira.com/content/aboutme.html) <span class="tag is-light is-rounded">Personal notes</span> -->
-
-
