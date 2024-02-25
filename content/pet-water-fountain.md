@@ -1,7 +1,7 @@
 ---
 title: Quick design of a Pet Water Fountain
 tags:
-  + CAD Design
+  - CAD Design
 date: "2024-02-25"
 ---
 
