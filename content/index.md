@@ -18,6 +18,7 @@ Currently working on [BattleButBot](https://github.com/nguterresn/battlebutbot)
 
 ### On 2024
 
+* [Basic CMake for embedded (STM32F0x Cortex-M0)](cmake/cmake-for-embedded.md)
 * [Quick design of a Pet Water Fountain](pet-water-fountain.md)
 * [A web browser robot controller](browser-robot-controller.md)
 * [How to simulate LGVL using SDL2 on VSCode (MacOS)](lgvl-simulator-vscode-macos.md)
