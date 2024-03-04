@@ -1,7 +1,7 @@
 ---
 title: How can you make your own portable Smoke Extractor
 tags:
-  Electronics
+  - Electronics
 date: "2022-07-31"
 ---
 
