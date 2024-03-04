@@ -260,14 +260,18 @@ Set as `PUBLIC` to include the directories for this library and respective targe
 
 3. Define compilation options
 
+```cmake
 target_compile_options(test PRIVATE ${test_compilation_options})
+```
 
 Set as `PRIVATE` to define the options only for this library.
 Set as `PUBLIC` to define the options for this library and respective targets where this library is linked.
 
 4. Define compilation definitions
 
+```cmake
 target_compile_definitions(test PRIVATE ${test_compilation_definitions})
+```
 
 Set as `PRIVATE` to define the definitions only for this library.
 Set as `PUBLIC` to define the definitions for this library and respective targets where this library is linked.
