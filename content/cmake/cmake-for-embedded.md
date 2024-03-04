@@ -1,8 +1,8 @@
 ---
 title: Basic CMake for embedded (STM32F0x Cortex-M0)
 tags:
-  + STM32
-  + CMake
+  - STM32
+  - CMake
 date: "2024-03-03"
 ---
 
