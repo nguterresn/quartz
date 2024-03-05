@@ -27,9 +27,9 @@ In order to do that, after creating a project for the target board, the necessar
 The `Core` folder includes relevant system and application code (I'll later separate them).
 The `Drivers` folder include the STM32 Hardware Abstraction Layer (HAL) and CMSIS libraries.
 
-!!! Info
-
-    CMSIS can be ignored.
+> [!info]
+>
+> CMSIS can be ignored.
 
 Personally, I don't like the way the project is structured, so I changed to this:
 
@@ -64,9 +64,9 @@ I've also removed the `main.h` file, copied all the defines inside and moved to 
 #endif
 ```
 
-!!! Warning
-
-    If this all seems a bit hard, I would recommend going through the readme of this [github repository](https://github.com/MaJerle/stm32-cube-cmake-vscode) first.
+> [!warning]
+>
+> If this all seems a bit hard, I would recommend going through the readme of this [github repository](https://github.com/MaJerle/stm32-cube-cmake-vscode) first.
 
 ## Move to your IDE
 
