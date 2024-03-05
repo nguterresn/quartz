@@ -128,11 +128,6 @@ I've deviced to include the compilation options and definitions inside a file, t
 
 #### -------------- COMPILER -------------- ####
 
-set(COMPILER_OPTIONS
-  -Og # Optimized for debugging!
-  -g3 # Max level of debug!
-)
-
 # Preprocessor defines!
 set(COMPILER_DEFINES
   "USE_HAL_DRIVER"
@@ -202,7 +197,7 @@ add_library(hal ${hal_source})
 target_include_directories(hal PUBLIC ${hal_include} ${system_include})
 # Don't look up for warnings - compile options and defines as PRIVATE.
 target_compile_definitions(hal PRIVATE ${COMPILER_DEFINES})
-target_compile_options(hal PRIVATE ${CPU_OPTIONS} ${COMPILER_OPTIONS})
+target_compile_options(hal PRIVATE ${CPU_OPTIONS})
 ```
 
 In order to have its compilation options and defines private, it is necessary to create the static library `hal` . This library will include all the `/HAL` related files (e.g. `${hal_include}` ) and the default compiling options and definitions.
@@ -218,7 +213,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${application_include})
 target_link_libraries(${PROJECT_NAME} hal)
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE ${COMPILER_DEFINES})
-target_compile_options(${PROJECT_NAME} PRIVATE ${CPU_OPTIONS} -Wall -Wextra -Werror ${COMPILER_OPTIONS})
+target_compile_options(${PROJECT_NAME} PRIVATE ${CPU_OPTIONS} -Wall -Wextra -Werror)
 ```
 
 The hal library is then linked to the application target and extra compilation options are added:
@@ -266,6 +261,8 @@ target_compile_options(test PRIVATE ${test_compilation_options})
 
 Set as `PRIVATE` to define the options only for this library.
 Set as `PUBLIC` to define the options for this library and respective targets where this library is linked.
+
+Note that some of the compilation options might already be set according to build types, e.g. `CMAKE_C_FLAGS`.
 
 4. Define compilation definitions
 
