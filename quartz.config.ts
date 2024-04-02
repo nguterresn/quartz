@@ -12,7 +12,7 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     analytics: {
-      provider: 'google', tagId: 'G-G15FQ3N6VZ',
+      provider: 'google', tagId: 'G-PBKM98ZE54',
     },
     baseUrl: "nguterresn.github.io/quartz",
     ignorePatterns: ["private", "templates", ".obsidian"],

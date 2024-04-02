@@ -6,11 +6,12 @@ date: "2024-02-03"
 ### About me
 
 Embedded Software Developer focused on making things. I've acquired experience with
-microcontrollers and real time operating systems with a strong link between
-the device and the cloud. I successfully build, test and maintain code for
-systems on the field. My hobbyist side also works with PCB & CAD Design.
+microcontrollers, Linux and real time operating systems with a strong link
+between the device and the cloud. Mostly focused on C/C++, CMake and
+Javascript. I successfully build, test and maintain code for systems on the
+field. My hobbyist side also works with PCB & CAD Design.
 
-Check my <a href="download/cv.pdf" download="NunoNogueiraCV.pdf">_curriculum vitae_</a>.
+Check my <a href="download/NunoNogueira_CV2024.pdf" download="NunoNogueiraCV.pdf">_curriculum vitae_</a>.
 
 ---
 
