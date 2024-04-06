@@ -14,6 +14,7 @@ const config: QuartzConfig = {
     analytics: {
       provider: 'google', tagId: 'G-PBKM98ZE54',
     },
+    locale: "en-US",
     baseUrl: "nguterresn.github.io/quartz",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
