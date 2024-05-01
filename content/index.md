@@ -26,7 +26,7 @@ Currently working on [BattleButBot](https://github.com/nguterresn/battlebutbot)
 
 ### On 2023
 
-* [The basics of CMake](cmake/cmake.md)
+* [The basics of CMake](cmake/cmake-basics.md)
 * [Control the ka3005p power supply with an Arduino Due](psu-ka3005p-due.md)
 * [Board to help you test end of line on your access control system](end-of-line-board.md)
 

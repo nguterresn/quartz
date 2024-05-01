@@ -1,4 +1,9 @@
-## The basics of CMake
+---
+title: The basics of CMake
+tags:
+  - CMake
+date: "2024-01-03"
+---
 
 ### Introduction
 
