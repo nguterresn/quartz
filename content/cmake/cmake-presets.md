@@ -31,7 +31,9 @@ add_subdirectory(test_lib)
 target_link_libraries(test PRIVATE test_lib)
 ```
 
-And the `test_lib` library `CMakeLists.txt` is written as following:
+The executable target is named `test`.
+
+The `test_lib` library `CMakeLists.txt` is written as following:
 
 ```cmake
 set(TEST_LIB_PATH ${CMAKE_CURRENT_SOURCE_DIR})
@@ -42,7 +44,7 @@ target_include_directories(test_lib PUBLIC ${TEST_LIB_PATH})
 
 A CMake preset can be simply added by creating the file `CMakePresets.json` in the root directory of the project.
 
-A _minimal_ CMake preset might look like this:
+A _minimal_ `CMakePresets.json` might look like this:
 
 ```cmake
 {
@@ -65,13 +67,14 @@ A _minimal_ CMake preset might look like this:
       "name": "default",
       "displayName": "Default Build Preset",
       "configurePreset": "default",
-      "jobs": 8
+      "jobs": 8,
+      "targets": "test"
     }
   ]
 }
 ```
 
-There is a `default` configure preset and a `default` build preset. Essentially this is minimum required to take some advantage from the CMake preset feature.
+There is a `default` configure preset and a `default` build preset. Essentially, this is minimum required to take advantage from the CMake preset feature.
 
 ## Test your CMake Preset
 
@@ -81,20 +84,20 @@ To run a configure preset, run on the shell:
 cmake --preset default
 ```
 
-This will build the Makefiles inside the `/build` directory, defined by the field `binaryDir`.
+This will create the Makefiles inside the `/build` directory, defined by the field `binaryDir`.
 
-To run a build preset, do the same as below but add the keyword `--build` before the preset:
+To run a build preset, do the same as above but add the keyword `--build` before the `--preset`:
 
 ```shell
 cmake --build --preset default
 ```
 
-This will automatically build the binary into the `/build`.
+This will automatically build the binary and store it in `/build`.
 
 ## Different presets for different build types
 
 The most popular build types are _debug_ and _release_.
-To have a preset with a pre-defined build type, change `CMAKE_BUILD_TYPE` inside the `cacheVariables` configure preset variable and the `configuration` inside the build preset.
+To have a preset with a pre-defined build type, change `CMAKE_BUILD_TYPE` inside the `cacheVariables` configure preset variable to match your desired build type. The `configuration` inside the build preset should also match the build type.
 
 ```cmake
 {
@@ -296,9 +299,9 @@ It will configure and build for you. Crazy good! 😁
 
 ## Sprinkle CMake with a simple Command Line Interface
 
-If you are like me, you can't be satisfied with the previous result. Even though the commands works as expected, the command is still too long and most of it could be easily abstracted.
+If you are like me, you can't be satisfied with the previous result. Even though the commands work as expected, the commands are still too long and most of it could be easily abstracted.
 
-With the help of python and its libraries, it is possible to create a CLI with the following methods:
+With the help of Python and its libraries, it is possible to create a CLI with the following methods:
 
 - `init`: generates the Makefiles according to a preset
 - `build`: builds the code according to a preset
@@ -306,7 +309,7 @@ With the help of python and its libraries, it is possible to create a CLI with t
 - `run`: executes the binary
 - `reset`: deletes the `/build` directory
 
-Create a file (do not include .py) in the root project directory. I've named it `example`.
+Create a file (do not include the extension .py) in the root project directory. I've named it `example`.
 
 My `example` file contains:
 
@@ -363,5 +366,3 @@ example workflow release
 ```
 
 That's all folks! Not only you ended up with a _2 words command_ to compile your code, but the entire code necessary to reach this result is also easy to understand and to go through. The JSON preset is readable and quite flexible: only a few preset options are necesary to make it work.
-
-
