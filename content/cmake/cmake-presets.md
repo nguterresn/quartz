@@ -8,7 +8,7 @@ date: "2024-05-01"
 In the [last article about CMake](cmake-for-embedded.md) I've explained how to use CMake for embedded software development and how to use, for example, an external toolchain.
 
 This time, I'm going to write about how can you automate CMake for your own needs.
-The [CMake Presets](https://cmake.org/cmake/help/latest/manual/cmake-presets.7.html) are a very powerful — and readable — tool for CMake.
+The [CMake Presets](https://cmake.org/cmake/help/latest/manual/cmake-presets.7.html) is a very powerful — and readable — tool for CMake.
 
 ## Creating a minimal CMake Preset from a simple CMake example
 
@@ -75,6 +75,8 @@ A _minimal_ `CMakePresets.json` might look like this:
 ```
 
 There is a `default` configure preset and a `default` build preset. Essentially, this is minimum required to take advantage from the CMake preset feature.
+
+I've decided to define the target inside the preset, but it can also be done as usual.
 
 ## Test your CMake Preset
 
