@@ -19,7 +19,7 @@ Currently working on [BattleButBot](https://github.com/nguterresn/battlebutbot)
 
 ### On 2024
 
-- [How to use CMake Presets and a custom Command Line Interface](cmake/cmake-presets.md)
+- [How to use CMake Presets with a custom Command Line Interface](cmake/cmake-presets.md)
 - [Basic CMake for embedded (STM32F0x Cortex-M0)](cmake/cmake-for-embedded.md)
 - [Quick design of a Pet Water Fountain](pet-water-fountain.md)
 - [A web browser robot controller](browser-robot-controller.md)
