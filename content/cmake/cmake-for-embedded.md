@@ -6,7 +6,7 @@ tags:
 date: "2024-03-03"
 ---
 
-I've previosly written about [CMake](cmake.md) and its benefits. The truth is — CMake is a beast of a _technology_ and it takes some time to get good at it. However, it is possible to take advantage from it without being a complete pro. Below, I'll try to list and explain the most common CMake commands to use when [cross-compiling](https://en.wikipedia.org/wiki/Cross_compiler) for a embedded device.
+I've previosly written about [CMake](cmake-basics.md) and its benefits. The truth is — CMake is a beast of a _technology_ and it takes some time to get good at it. However, it is possible to take advantage from it without being a complete pro. Below, I'll try to list and explain the most common CMake commands to use when [cross-compiling](https://en.wikipedia.org/wiki/Cross_compiler) for a embedded device.
 
 You can read the entire code on my [github repository](https://github.com/nguterresn/stm32f0-boilterplate).
 

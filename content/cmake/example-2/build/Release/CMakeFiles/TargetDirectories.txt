@@ -1,0 +1,6 @@
+/Users/nunonogueira/quartz/content/cmake/example-2/build/Release/CMakeFiles/test.dir
+/Users/nunonogueira/quartz/content/cmake/example-2/build/Release/CMakeFiles/edit_cache.dir
+/Users/nunonogueira/quartz/content/cmake/example-2/build/Release/CMakeFiles/rebuild_cache.dir
+/Users/nunonogueira/quartz/content/cmake/example-2/build/Release/test_lib/CMakeFiles/test_lib.dir
+/Users/nunonogueira/quartz/content/cmake/example-2/build/Release/test_lib/CMakeFiles/edit_cache.dir
+/Users/nunonogueira/quartz/content/cmake/example-2/build/Release/test_lib/CMakeFiles/rebuild_cache.dir

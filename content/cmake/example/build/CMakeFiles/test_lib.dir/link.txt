@@ -1,2 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc libtest_lib.a CMakeFiles/test_lib.dir/test_lib/test_lib.c.o
-/Library/Developer/CommandLineTools/usr/bin/ranlib libtest_lib.a

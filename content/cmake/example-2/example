@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+
+import argparse
+import subprocess
+
+parser = argparse.ArgumentParser()
+parser.add_argument("action", help="The action to perform, e.g. init, build, workflow, run, reset")
+parser.add_argument("type", nargs='?', const="debug", default="debug", help="The build type to perform, e.g. debug, release")
+args = parser.parse_args()
+
+if (args.action == 'init'):
+  subprocess.run(["cmake", "--preset", args.type])
+elif (args.action == 'build'):
+  subprocess.run(["cmake", "--build", "--preset", args.type])
+elif (args.action == 'workflow'):
+  subprocess.run(["cmake", "--workflow", "--preset", args.type])
+elif (args.action == 'run'):
+  subprocess.run(["./build/" + args.type + "/test"], shell=True)
+elif(args.action == 'reset'):
+  subprocess.run(["rm", "-rf", "build"])
+
