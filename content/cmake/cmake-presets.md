@@ -1,5 +1,5 @@
 ---
-title: How to use CMake Presets and a custom Command Line Interface
+title: How to use CMake Presets with a custom Command Line Interface
 tags:
   - CMake
 date: "2024-05-01"
