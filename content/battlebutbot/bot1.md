@@ -40,6 +40,8 @@ That being said, I aimed for the following features:
 
 I designed a small and rounded 40x40mm printed circuit board with, mainly, a microcontroller (ESP32-S3) and a motor driver (DRV8833).
 
+![BattleButBot PCB](../img/OA2Dzp6.jpeg)
+
 The board is supplied with 7.4V from a 2-cell LiPo battery. The motors are supplied directly from the battery, but the microcontroller is supplied with 3.3V.
 
 ### Design (CAD)
