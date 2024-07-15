@@ -154,5 +154,20 @@ temp |= ((GPIO_Init->Mode & GPIO_MODE) << (position * 2u));
 GPIOx->MODER = temp;
 ```
 
-
 ### Write
+
+Inside `HAL_GPIO_Init`:
+
+```c
+if (PinState != GPIO_PIN_RESET)
+{
+  GPIOx->BSRR = (uint32_t)GPIO_Pin;
+}
+else
+{
+  GPIOx->BRR = (uint32_t)GPIO_Pin;
+}
+```
+
+Quite easy to understand! Plus, both `BSRR` and `BRR` support atomic operations. Use these insted of `ODR`.
+
