@@ -126,8 +126,33 @@ The _AHB peripheral clock enable register_ enables/disables the clock for all th
 
 ![RCC_AHBENR Register](../img/RCC_AHBENR.jpg)
 
-Therefore, by previously setting the `PORTC` bit to 1, we are actually enabling the clock for the same port.
+Therefore, by previously setting the `PORTC` bit to 1, we are actually enabling the clock.
 
 ### Init
+
+What registers need to be set to initialize a port? Let's check.
+
+Inside `HAL_GPIO_Init`:
+
+```c
+/* Configure the IO Output Type */
+temp = GPIOx->OTYPER;
+temp &= ~(GPIO_OTYPER_OT_0 << position) ;
+temp |= (((GPIO_Init->Mode & OUTPUT_TYPE) >> OUTPUT_TYPE_Pos) << position);
+GPIOx->OTYPER = temp;
+
+/* Activate the Pull-up or Pull down resistor for the current IO */
+temp = GPIOx->PUPDR;
+temp &= ~(GPIO_PUPDR_PUPDR0 << (position * 2u));
+temp |= ((GPIO_Init->Pull) << (position * 2u));
+GPIOx->PUPDR = temp;
+
+/* Configure IO Direction mode (Input, Output, Alternate or Analog) */
+temp = GPIOx->MODER;
+temp &= ~(GPIO_MODER_MODER0 << (position * 2u));
+temp |= ((GPIO_Init->Mode & GPIO_MODE) << (position * 2u));
+GPIOx->MODER = temp;
+```
+
 
 ### Write
