@@ -141,11 +141,15 @@ temp &= ~(GPIO_OTYPER_OT_0 << position) ;
 temp |= (((GPIO_Init->Mode & OUTPUT_TYPE) >> OUTPUT_TYPE_Pos) << position);
 GPIOx->OTYPER = temp;
 
+// ...
+
 /* Activate the Pull-up or Pull down resistor for the current IO */
 temp = GPIOx->PUPDR;
 temp &= ~(GPIO_PUPDR_PUPDR0 << (position * 2u));
 temp |= ((GPIO_Init->Pull) << (position * 2u));
 GPIOx->PUPDR = temp;
+
+// ...
 
 /* Configure IO Direction mode (Input, Output, Alternate or Analog) */
 temp = GPIOx->MODER;
