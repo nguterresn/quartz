@@ -96,7 +96,7 @@ HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
 
 ## Underneath the HAL
 
-The HAL is great and most of the times is enough. However, it is important to know how to do it manually, register by register, so that one can understand better how things work.
+The HAL is great and most of the times is enough. However, it is important to know how to do it manually, register by register, so that one can understand better how things work and develop away from any vendor tool.
 
 ### RCC
 
