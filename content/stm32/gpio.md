@@ -113,7 +113,7 @@ UNUSED(tmpreg);
 Which translates to:
 
 ```c
-RCC->AHBENR |= 0x00080000;
+RCC->AHBENR |= 0x00080000; // RCC_AHBENR_GPIOCEN = 0x00080000
 ```
 
 The `RCC` points to a memory mapped address register, the Reset and Clock Control (RCC). In this case, we deal with the AHB peripheral clock enable register (RCC_AHBENR 7.4.6).
