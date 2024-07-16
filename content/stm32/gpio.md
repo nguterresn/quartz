@@ -39,7 +39,14 @@ static void MX_GPIO_Init(void)
 }
 ```
 
-### RCC
+So, what really happens above?
+
+- A clock is setup per pin
+- Every pin has its own configuration
+
+Let's start with the clock.
+
+### Reset and clock control (RCC)
 
 Note the first thing done is to setup the clock for each `PORT` used:
 
@@ -48,6 +55,8 @@ Note the first thing done is to setup the clock for each `PORT` used:
 __HAL_RCC_GPIOC_CLK_ENABLE();
 __HAL_RCC_GPIOA_CLK_ENABLE();
 ```
+
+That's it. Easy, right? The clock part is done. Now, let's jump into the pin configuration.
 
 ### Init
 
@@ -66,7 +75,7 @@ typedef struct
 
 The `Pull`, `Speed` and `Alternate` integers are variables we don't need to pay attention now. On the other hand, both `Pin` and `Mode` integers are important. The two integers are quite explicit for what they serve.
 
-To initialize, a struct of type `GPIO_InitTypeDef` is created and is filled with the desired data. Since we want to set up the pin as an output, it would be something like:
+To initialize, a struct of type `GPIO_InitTypeDef` is created and is filled with the desired data. Since we want to set up the pin as an output, we need to have something (more or less) like the snippet below:
 
 ```c
 GPIO_InitTypeDef GPIO_InitStruct = { 0 };
@@ -83,7 +92,7 @@ GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
 HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 ```
 
-The `GPIO_PIN_5` is defined by the HAL (stm32f0xx_hal_gpio.h).
+The `GPIO_PIN_5` is defined by the HAL ([stm32f0xx_hal_gpio.h](https://github.com/STMicroelectronics/stm32f0xx_hal_driver/blob/master/Inc/stm32f0xx_hal_gpio.h)).
 The mode is defined as `MODE_OUTPUT`. This enables a few things internally. The mode also specifies `OUTPUT_PP`, which sets the GPIO in a _push-pull_ mode (sources Vcc when 1 and Gnd when 0).
 
 ### Write
@@ -94,11 +103,13 @@ To write to a pin, you need to simply use one of the HAL available functions:
 HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
 ```
 
+And that's basically it... If that's what you were looking for, you are good to go! However, if you want to learn more, I'd recommend to keep reading! 😉
+
 ## Underneath the HAL
 
 The HAL is great and most of the times is enough. However, it is important to know how to do it manually, register by register, so that one can understand better how things work and develop away from any vendor tool.
 
-### RCC
+### Reset and clock control (RCC)
 
 Digging `__HAL_RCC_GPIOC_CLK_ENABLE`, we can check a define as such:
 
@@ -175,25 +186,25 @@ From the code example above, both `MODER` and `OTYPER` are dependant on `GPIO_In
 Simplifying a bit all the bitwise operations and the abstractions, the code may look like this:
 
 ```c
-/* For Pin 2 on PORTC */
-#define pin 2
+/* For Pin 5 on PORTA */
+#define pin 5
 
 /* Configured as push-pull (set as 0) */
-GPIOC->OTYPER &= ~(1 << pin); // OT2
+GPIOA->OTYPER &= ~(1 << pin); // OT5
 
 // ...
 
 /* No pull-up or pull-down (set as 0) */
 // 3u = 11: Reserved
 // * 2 = 2 bits per pin
-GPIOC->PUPDR = &= ~(1 << (3u << (pin * 2))); // PUPDR2[1:0]
+GPIOA->PUPDR = &= ~(1 << (3u << (pin * 2))); // PUPDR5[1:0]
 
 // ...
 
 /* Configured as an output (set as 0x1) */
 // 1u = 01: General purpose output mode
 // * 2 = 2 bits per pin
-GPIOC->MODER |= (1 << (1u << (pin * 2)));
+GPIOA->MODER |= (1 << (1u << (pin * 2)));
 ```
 
 After a port is correctly initialized as an output, there are a few things that happen on the hardware level:
@@ -224,6 +235,14 @@ else
 }
 ```
 
-In this specific case, due to both having only access to write and placed before `ODR`, they can be used without bitwise operations.
+In this specific case, due to both, `BSRR` and `BRR`, having only access to write and being placed before `ODR`, they can be used without bitwise operations:
+
+```c
+/* For Pin 5 on PORTA */
+#define pin 5
+
+GPIOA->BSRR = 1 << pin; // To write
+GPIOA->BRR = 1 << pin; // To clear
+```
 
 ![IO Port Bit W](../img/IOPortBitZoom.jpg)
