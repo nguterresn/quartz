@@ -158,9 +158,60 @@ temp |= ((GPIO_Init->Mode & GPIO_MODE) << (position * 2u));
 GPIOx->MODER = temp;
 ```
 
+Starting from the top to the bottom, the register `OTYPER` stands for _output type register_:
+
+![GPIO port output type register (GPIOx_OTYPER)](../img/OTYPER.jpg)
+
+The register `PUPDR` stands for _pull-up/pull-down register_ but doesn't necessarly need to be set. The default value is 0: no pull-up or pull-down resistor.
+
+![GPIO port pull-up/pull-down register (GPIOx_PUPDR)](../img/PUPDR.jpg)
+
+And finally, the `MODER`. It stands for _mode register_ and is responsible for setting a pin to one of the four available options:
+
+![GPIO port mode register (GPIOx_MODER)](../img/MODER.jpg)
+
+From the code example above, both `MODER` and `OTYPER` are dependant on `GPIO_Init`, which is the same struct as seen [before](#init).
+
+Simplifying a bit all the bitwise operations and the abstractions, the code may look like this:
+
+```c
+/* For Pin 2 on PORTC */
+#define pin 2
+
+/* Configured as push-pull (set as 0) */
+GPIOC->OTYPER &= ~(1 << pin); // OT2
+
+// ...
+
+/* No pull-up or pull-down (set as 0) */
+// 3u = 11: Reserved
+// * 2 = 2 bits per pin
+GPIOC->PUPDR = &= ~(1 << (3u << (pin * 2))); // PUPDR2[1:0]
+
+// ...
+
+/* Configured as an output (set as 0x1) */
+// 1u = 01: General purpose output mode
+// * 2 = 2 bits per pin
+GPIOC->MODER |= (1 << (1u << (pin * 2)));
+```
+
+After a port is correctly initialized as an output, there are a few things that happen on the hardware level:
+
+![IO Port Bit](../img/IOPortBit.jpg)
+
+Everything starts with the `MODER` set as an output. The `OTYPER` register controls how the MOSFETs are used and the `PUPDR` enables or disables the resistors accordingly.
+
+In contrast to what some may think, the input data register is still being sampled with data. However, there is one major diference:
+
+- The input data register (IDR) has the I/O state (data presented at the pin)
+- The output data register (ODR) has the last written value
+
+It's important to know the diference, as they are not exactly the same!
+
 ### Write
 
-Inside `HAL_GPIO_Init`:
+Inside `HAL_GPIO_WritePin`:
 
 ```c
 if (PinState != GPIO_PIN_RESET)
@@ -173,5 +224,6 @@ else
 }
 ```
 
-Quite easy to understand! Plus, both `BSRR` and `BRR` support atomic operations. Use these insted of `ODR`.
+In this specific case, due to both having only access to write and placed before `ODR`, they can be used without bitwise operations.
 
+![IO Port Bit W](../img/IOPortBitZoom.jpg)
