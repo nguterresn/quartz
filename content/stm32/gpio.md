@@ -204,8 +204,8 @@ Everything starts with the `MODER` set as an output. The `OTYPER` register contr
 
 In contrast to what some may think, the input data register is still being sampled with data. However, there is one major diference:
 
-- The input data register (IDR) has the I/O state (data presented at the pin)
-- The output data register (ODR) has the last written value
+- **The input data register (IDR) has the I/O state (data presented at the pin)**
+- **The output data register (ODR) has the last written value**
 
 It's important to know the diference, as they are not exactly the same!
 
