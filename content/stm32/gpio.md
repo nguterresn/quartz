@@ -248,3 +248,31 @@ GPIOA->BRR = 1 << pin; // To clear
 ```
 
 ![IO Port Bit W](../img/IOPortBitZoom.jpg)
+
+## The bottom
+
+Every GPIO has its own address mapped into the MCU memory. For example, the AHB2 Bus has the adress of `0x48000000`.
+
+![AHB2Address](../img/AHB2Address.jpg)
+
+GPIOA sits at its base address, GPIOB exists with the offset of `0x00000400`, so `0x48000400`.
+
+![AHB2 GPIOs Addresses](../img/AHB2GPIO.jpg)
+
+Therefore, it's possible to define the GPIOs as such:
+
+```c
+#define pin 5
+
+volatile uint32_t* GPIOA = 0x48000000;
+uint32_t volatile* GPIOA_SET   = (uint32_t*)(0x48000000 + 0x18); // Note: BSRR memory offset is 0x18
+uint32_t volatile* GPIOA_RESET = (uint32_t*)(0x48000000 + 0x28); // Note: BRR memory offset is 0x28
+
+*GPIOA_SET   = (1 << pin); // Write 1
+// ...
+*GPIOA_RESET = (1 << pin); // Write 0
+```
+
+Maybe there are more ways (and even better) to setup a GPIO, but these options should cover most of the cases. 
+
+
