@@ -1,5 +1,5 @@
 ---
-title: Set up an output on a STM32F0
+title: Set up a GPIO as an output on a STM32F0
 tags:
   - STM32
 date: "2024-07-15"
@@ -7,13 +7,13 @@ date: "2024-07-15"
 
 ## Introduction
 
-Setting up a 32-bit based MCU pin might be more tricky than you think. However, it is not really difficult. There are packages, like the HAL, one can use to quickly setup a pin as an output. But — what really happens behind the scenes?
+Setting up a 32-bit ARM based MCU GPIO might be more tricky than you think. There are packages, such as the [Hardware Abstraction Layer](https://github.com/STMicroelectronics/stm32f0xx_hal_driver), one can use to quickly setup a GPIO as an output. But — what really happens behind the scenes?
 
-I'll try to list down all the things I've learned from experience using the [STM32F030R8](https://www.st.com/en/microcontrollers-microprocessors/stm32f030r8.html).
+I'll try to list down all the things I've learned using the [STM32F030R8](https://www.st.com/en/microcontrollers-microprocessors/stm32f030r8.html).
 
 ## HAL
 
-The easiest thing to do is to learn from examples. The default code generated from the STM32CubeIDE contains a few functions that group a few [HAL](https://github.com/STMicroelectronics/stm32f0xx_hal_driver) calls:
+The easiest thing to do is to learn from examples. Luckily, ST provides a bunch! The default code generated from the STM32CubeIDE contains a few functions that group a few [HAL](https://github.com/STMicroelectronics/stm32f0xx_hal_driver) calls:
 
 ```c
 static void MX_GPIO_Init(void)
@@ -41,8 +41,8 @@ static void MX_GPIO_Init(void)
 
 So, what really happens above?
 
-- A clock is setup per pin
-- Every pin has its own configuration
+- A clock is setup per GPIO PORT (e.g GPIOA or GPIOC)
+- Every GPIO has its own configuration
 
 Let's start with the clock.
 
@@ -56,7 +56,7 @@ __HAL_RCC_GPIOC_CLK_ENABLE();
 __HAL_RCC_GPIOA_CLK_ENABLE();
 ```
 
-That's it. Easy, right? The clock part is done. Now, let's jump into the pin configuration.
+That's it. Easy, right? The clock part is done. Now, let's jump into the GPIO configuration.
 
 ### Init
 
@@ -75,7 +75,7 @@ typedef struct
 
 The `Pull`, `Speed` and `Alternate` integers are variables we don't need to pay attention now. On the other hand, both `Pin` and `Mode` integers are important. The two integers are quite explicit for what they serve.
 
-To initialize, a struct of type `GPIO_InitTypeDef` is created and is filled with the desired data. Since we want to set up the pin as an output, we need to have something (more or less) like the snippet below:
+To initialize, a struct of type `GPIO_InitTypeDef` is created and is filled with the desired data. Since we want to set up the GPIO as an output, we need to have something (more or less) like the snippet below:
 
 ```c
 GPIO_InitTypeDef GPIO_InitStruct = { 0 };
@@ -97,13 +97,15 @@ The mode is defined as `MODE_OUTPUT`. This enables a few things internally. The 
 
 ### Write
 
-To write to a pin, you need to simply use one of the HAL available functions:
+To write to a GPIO Pin, one simply needs to use one of the HAL available functions:
 
 ```c
 HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
 ```
 
-And that's basically it... If that's what you were looking for, you are good to go! However, if you want to learn more, I'd recommend to keep reading! 😉
+That's all folks!...
+
+If that's what you were looking for, you are good to go! However, if you want to learn more, I'd recommend to keep reading! 😉
 
 ## Underneath the HAL
 
@@ -177,7 +179,7 @@ The register `PUPDR` stands for _pull-up/pull-down register_ but doesn't necessa
 
 ![GPIO port pull-up/pull-down register (GPIOx_PUPDR)](../img/PUPDR.jpg)
 
-And finally, the `MODER`. It stands for _mode register_ and is responsible for setting a pin to one of the four available options:
+And finally, the `MODER`. It stands for _mode register_ and is responsible for setting a GPIO pin to one of the four available options:
 
 ![GPIO port mode register (GPIOx_MODER)](../img/MODER.jpg)
 
@@ -215,7 +217,7 @@ Everything starts with the `MODER` set as an output. The `OTYPER` register contr
 
 In contrast to what some may think, the input data register is still being sampled with data. However, there is one major diference:
 
-- **The input data register (IDR) has the I/O state (data presented at the pin)**
+- **The input data register (IDR) has the I/O state (data presented at the GPIO)**
 - **The output data register (ODR) has the last written value**
 
 It's important to know the diference, as they are not exactly the same!

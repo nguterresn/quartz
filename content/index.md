@@ -19,7 +19,7 @@ Currently working on [BattleButBot](https://github.com/nguterresn/battlebutbot)
 
 ### On 2024
 
-- [Set up an output on a STM32F0](stm32/gpio.md)
+- [Set up a GPIO as an output on a STM32F0](stm32/gpio.md)
 - [BattleButBot v1.0](battlebutbot/bot1.md)
 - [How to use CMake Presets with a custom Command Line Interface](cmake/cmake-presets.md)
 - [Basic CMake for embedded (STM32F0x Cortex-M0)](cmake/cmake-for-embedded.md)
