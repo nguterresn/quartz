@@ -19,7 +19,7 @@ The inverse happens when the bot is driving backwards and the same can be acheiv
 
 The most basic approach to the premisse exposed above would be to, when aiming to turn the bot, drive one motor and stop the other one. In _pseudo code_ would be something like:
 
-```C
+```c
 // To turn right
 motor_left(ON);
 motor_right(OFF);
