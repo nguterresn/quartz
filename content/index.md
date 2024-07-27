@@ -19,6 +19,7 @@ Currently working on [BattleButBot](https://github.com/nguterresn/battlebutbot)
 
 ### On 2024
 
+- [How to drive a 2 wheels bot](battlebutbot/2wd-bot.md)
 - [Set up a GPIO as an output on a STM32F0](stm32/gpio.md)
 - [BattleButBot v1.0](battlebutbot/bot1.md)
 - [How to use CMake Presets with a custom Command Line Interface](cmake/cmake-presets.md)
