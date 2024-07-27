@@ -94,7 +94,7 @@ uint8_t motor_right_speed = SPEED_VALUE * sin(z); // Always eq or less than 100
 
 > [!info]
 >
-> The double variable _z_ is radians, not degrees.
+> The double variable _z_ is in radians, not degrees.
 
 This ensures the bot has a smoother turn and its behaviour is based on a Joystick controller, the direction of the bot is pretty much figured out. However, this is not enough — there is something missing.
 
