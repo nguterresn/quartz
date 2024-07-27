@@ -39,7 +39,7 @@ From now on, let's use a scale of 0 to 100 to materialize the velocity of the mo
 
 Changing just the speed of each motor, it could be possible to take the last _pseudo code_ example and tweak it a bit:
 
-```C
+```c
 // To turn right
 motor_left(100);
 motor_right(50);
@@ -83,7 +83,7 @@ Both arrows, the red and blue, materialize the maximum speed of the left motor a
 
 The desired opposite side Y value can be measured by:
 
-```C
+```c
 #define SPEED_VALUE 100
 
 uint8_t motor_left_speed = SPEED_VALUE;
@@ -108,7 +108,7 @@ There is a need for one more Joystick – one which only controllers how fast a 
 
 The speed should be based on this newly added joystick, while the direction (how the bot turns) should be managed by the second joystick.
 
-```C
+```c
 int speed = analogRead(JOYSTICK_1_SPEED);
 int direction_y = analogRead(JOYSTICK_2_Y);
 int direction_x = analogRead(JOYSTICK_2_X);
