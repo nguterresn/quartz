@@ -248,6 +248,8 @@ The enclosure to glue everything together is a 12cm x 9cm PLA printed design wit
 
 ![Final Design](../img/IMG_8859.jpeg)
 
+In case you are interested in the project, please check the [project's repository](https://github.com/nguterresn/simple-esp-now-controller) and feel free to build your own controller!
+
 That's all folks! Have safe drives ;)
 
 
