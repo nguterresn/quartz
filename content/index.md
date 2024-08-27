@@ -7,15 +7,12 @@ date: "2024-02-03"
 
 Embedded Software Developer focused on making things. I've acquired experience with
 microcontrollers, Linux and real time operating systems with a strong link
-between the device and the cloud. Mostly focused on C/C++, CMake and
-Javascript. I successfully build, test and maintain code for systems on the
+between the device and the cloud. Mostly developing on C/C++, CMake and a sparkle of Rust. I successfully build, test and maintain code for systems on the
 field. My hobbyist side also works with PCB & CAD Design.
 
 Check my <a href="download/NunoNogueira_CV2024.pdf" download="NunoNogueiraCV.pdf">_curriculum vitae_</a>.
 
 ---
-
-Currently working on [BattleButBot](https://github.com/nguterresn/battlebutbot)
 
 ### On 2024
 
