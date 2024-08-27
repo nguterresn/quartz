@@ -19,6 +19,7 @@ Currently working on [BattleButBot](https://github.com/nguterresn/battlebutbot)
 
 ### On 2024
 
+- [A Bullet list about Rust](rust-chars.md)
 - [How to drive a 2 wheels bot](battlebutbot/2wd-bot.md)
 - [Set up a GPIO as an output on a STM32F0](stm32/gpio.md)
 - [BattleButBot v1.0](battlebutbot/bot1.md)
