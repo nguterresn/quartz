@@ -172,6 +172,7 @@ a {
       box-sizing: border-box;
       padding: 0 4rem;
       position: fixed;
+      z-index: 1;
       @media all and (max-width: $fullPageWidth) {
         position: initial;
         flex-direction: row;
@@ -540,4 +541,12 @@ ol.overflow {
 .katex-display {
   overflow-x: auto;
   overflow-y: hidden;
+}
+
+.external-embed.youtube,
+iframe.pdf {
+  aspect-ratio: 16 / 9;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
 }
