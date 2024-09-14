@@ -1,5 +1,5 @@
 ---
-title: _root_ 🌱
+title: root 🌱
 date: "2024-02-03"
 ---
 
@@ -16,6 +16,7 @@ Check my <a href="download/NunoNogueira_CV2024.pdf" download="NunoNogueiraCV.pdf
 
 ### On 2024
 
+- [The significance of handling errors gracefully](the-significance-gracefull-errors.md)
 - [A Bullet list about Rust](rust-chars.md)
 - [How to drive a 2 wheels bot](battlebutbot/2wd-bot.md)
 - [Set up a GPIO as an output on a STM32F0](stm32/gpio.md)

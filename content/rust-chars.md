@@ -17,7 +17,7 @@ Just an easy to grasp rule.
 
 > Mut stands for _mutable_ and not for _is it indeed stored in the heap memory_.
 
-```Rust
+```rust
 let a: u32 = 1;     // Goes into the stack
 let mut b: u32 = 1; // Goes into the stack
 
@@ -43,7 +43,7 @@ As someone who comes from C, this is a big thing. Strings are stored as:
 - Capacity (the maximum length of the string)
 - Length (the actual length of a string)
 
-```Rust
+```rust
 let mut s = String::new();
 
 println!("Capacity -> {}", s.capacity());
@@ -60,7 +60,7 @@ println!("Capacity -> {}", s.capacity());
 
 This is a weird one for me. How come? Apparently, [Strings are UTF-8 encoded](https://doc.rust-lang.org/std/string/index.html).
 
-```Rust
+```rust
 let emoji = String::from("💀");
 let bytes = emoji.into_bytes();
 
@@ -77,7 +77,7 @@ println!("Emoji {} can be read as {:?}", "💀", bytes);
 
 Due to the borrow checker rules, the Strings are actually moved to another scope, but the integers are just copied.
 
-```Rust
+```rust
 fn main() {
   let text = String::from("This text");
   let number = 1;
@@ -106,7 +106,7 @@ fn print_a_string(a: String) {
 
 Drop does not nothing, yet matters:
 
-```Rust
+```rust
 pub fn drop<T>(_x: T) {}
 ```
 
@@ -116,7 +116,7 @@ Quoting the documentation:
 
 And it is not, it takes an argument and does nothing. Also does't return anything. However, due to Rust borrow checker, the argument once copied, will cease to exist.
 
-```Rust
+```rust
 fn main() {
   let text = String::from("This text");
 

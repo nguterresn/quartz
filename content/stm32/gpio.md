@@ -199,14 +199,14 @@ GPIOA->OTYPER &= ~(1 << pin); // OT5
 /* No pull-up or pull-down (set as 0) */
 // 3u = 11: Reserved
 // * 2 = 2 bits per pin
-GPIOA->PUPDR = &= ~(1 << (3u << (pin * 2))); // PUPDR5[1:0]
+GPIOA->PUPDR = &= ~(3u << (pin * 2)); // PUPDR5[1:0]
 
 // ...
 
 /* Configured as an output (set as 0x1) */
 // 1u = 01: General purpose output mode
 // * 2 = 2 bits per pin
-GPIOA->MODER |= (1 << (1u << (pin * 2)));
+GPIOA->MODER |= (1u << (pin * 2));
 ```
 
 After a port is correctly initialized as an output, there are a few things that happen on the hardware level:
@@ -273,6 +273,6 @@ uint32_t volatile* GPIOA_RESET = (uint32_t*)(0x48000000 + 0x28); // Note: BRR me
 *GPIOA_RESET = (1 << pin); // Write 0
 ```
 
-Maybe there are more ways (and even better) to setup a GPIO, but these options should cover most of the cases. 
+Maybe there are more ways (and even better) to setup a GPIO, but these options should cover most of the cases.
 
 
