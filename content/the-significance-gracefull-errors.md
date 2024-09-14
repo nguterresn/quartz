@@ -42,7 +42,7 @@ Now, why is this so important? As I stated before, the program does a bunch of s
 - Feature A
 - Feature B
 
-In the most recent code changes, the feature A codebase was slightly altered. Eventually, an exception is raised and the program crashes. The has it program crashed over changes on feature A and can't both. However, in case where the errors are gracefully managed, the user could still use the feature B where the feature A would just not work as expected.
+In the most recent code changes, the feature A codebase was slightly altered. Eventually, an exception is raised and the program crashes. The user program has crashed over changes from feature A and can't use both. However, in a case where the errors are gracefully managed, the user could still use the feature B whereas the feature A would just not work as expected.
 
 
 
