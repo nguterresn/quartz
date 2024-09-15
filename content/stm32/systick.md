@@ -1,5 +1,5 @@
 ---
-title: SysTick, Priorities and HAL
+title: SysTick, Priorities and ST HAL
 tags:
   - STM32
   - HAL
@@ -41,7 +41,7 @@ However, the frequency at which the SysTick runs, can change by:
 
 ### HAL_InitTick
 
-Before jumping into a RTOS environment, let's take a first look at a simple HAL implementation and its use of SysTick.
+Let's take a first look at a simple HAL implementation and its use of SysTick.
 
 The function `HAL_Init` is the first function to run to initialize the ST HAL. Interesting enough, even before the peripherals are initialized, the SysTick is set:
 
@@ -90,15 +90,60 @@ __weak HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
 The HAL introduces a bit of bloated code, but essentially, the `HAL_InitTick` sets, for a frequency of 8MHz, an expected 8000 ticks. Inside `HAL_SYSTICK_Config` the priority of the _SysTick_IRQn_, the SysTick _Interrupt Request_, is set to the lowest priority possible (in the case of STM32F030R8 is 3, where 0 is the highest priority).
 
 ```c
-NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
+NVIC_SetPriority(SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
 ```
 
 However, the priority is then changed from lowest to highest priority inside `HAL_Init`, since _TickPriority_ is 0:
 
 ```c
-HAL_NVIC_SetPriority(SysTick_IRQn, TickPriority, 0U);
+if (TickPriority < (1UL << __NVIC_PRIO_BITS))
+{
+  HAL_NVIC_SetPriority(SysTick_IRQn, TickPriority, 0U);
+  uwTickPrio = TickPriority;
+}
 ```
 
-This is extremely important. This change of prioirty means that SysTick will suspend any Interrupt Service Routine (ISR) from running as long as SysTick is being executed.
+This is quite important! This change of priority means that the SysTick will suspend any Interrupt Service Routine (ISR) from running as long as SysTick is being executed.
+
+> [!note]
+> The frequency of the system clock might change after the SysTick is first set. For example, the HAL for the STM32F030R8 first sets SysTick at a frequency of 8MHz and following time at 48MHz. The priority remains.
+
+Finally, anytime SysTick is triggered, SysTick_Handler is called:
+
+```c
+void SysTick_Handler(void)
+{
+  HAL_IncTick();
+}
+```
+
+And `HAL_IncTick` increments a milisecond:
+
+```c
+__weak void HAL_IncTick(void)
+{
+  uwTick += uwTickFreq;
+}
+```
+
+### Priorities
+
+The priority of the SysTick IRQ is key here. The ST HAL uses the SysTick for its own delays and timeouts, hence the importance of a correctly set prio.
+
+```c
+#define  TICK_INT_PRIORITY            ((uint32_t)0)    /*!< tick interrupt priority (lowest by default)  */
+/*  Warning: Must be set to higher priority for HAL_Delay()  */
+/*  and HAL_GetTick() usage under interrupt context          */
+```
+
+The languague is odd, but the `TICK_INT_PRIORITY` is actually set to the highest priority (numerically the lowest).
+
+The popular freeRTOS uses SysTick as its tick interrupt and it is [recommended](https://forums.freertos.org/t/systick-priority-vs-all-cortex-m-priorities/9289/2) to keep the priority low.
+This might result in some timing jitter but will ensure the remaining tasks work as expected.
+
+Other very important aspect of the Cortex-M interrupts priorities is how they always need to be explicitly defined when using freeRTOS API functions:
+
+> Cortex-M interrupts default to having a priority value of zero. Zero is the highest possible priority value. Therefore, never leave the priority of an interrupt that uses the interrupt safe RTOS API at its default value.
+
 
 
