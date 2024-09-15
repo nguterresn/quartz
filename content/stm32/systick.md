@@ -89,13 +89,19 @@ __weak HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
 }
 ```
 
-The HAL introduces a bit of bloated code, but essentially, the `HAL_InitTick` sets, for a frequency of 8MHz, an expected 8000 ticks. Inside `HAL_SYSTICK_Config` the priority of the _SysTick_IRQn_, the SysTick _Interrupt Request_, is set to the lowest priority possible (in the case of STM32F030R8 is 3, where 0 is the highest priority).
+The HAL introduces a bit of bloated code, but essentially, the `HAL_InitTick` sets the number of ticks necessary to result in a 1ms SysTick interrupt. Inside `HAL_SYSTICK_Config` the priority of the _SysTick_IRQn_, the SysTick _Interrupt Request_, is set to the lowest priority possible (in the case of STM32F030R8 is 3, where 0 is the highest priority).
 
 ```c
-NVIC_SetPriority(SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
+__STATIC_INLINE uint32_t SysTick_Config(uint32_t ticks)
+{
+  SysTick->LOAD  = (uint32_t)(ticks - 1UL);                         /* set reload register */
+  NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL);
+
+  (...)
+}
 ```
 
-However, the priority is then changed from lowest to highest priority inside `HAL_Init`, since _TickPriority_ is 0:
+However, the priority is then changed from lowest to highest priority in the next step of `HAL_Init`, since _TickPriority_ is 0:
 
 ```c
 if (TickPriority < (1UL << __NVIC_PRIO_BITS))
