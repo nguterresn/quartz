@@ -152,7 +152,7 @@ In case precise time tracking is a requirement, the setup of another timer could
 
 The popular freeRTOS uses SysTick as its tick interrupt and it is [recommended](https://forums.freertos.org/t/systick-priority-vs-all-cortex-m-priorities/9289/2) to keep the priority **low**.
 
-```
+```c
 #define xPortSysTickHandler SysTick_Handler
 ```
 
