@@ -151,6 +151,11 @@ In case precise time tracking is a requirement, the setup of another timer could
 ### Priorities with freeRTOS
 
 The popular freeRTOS uses SysTick as its tick interrupt and it is [recommended](https://forums.freertos.org/t/systick-priority-vs-all-cortex-m-priorities/9289/2) to keep the priority **low**.
+
+```
+#define xPortSysTickHandler SysTick_Handler
+```
+
 This might result in some timing jitter but will ensure the remaining tasks work as expected.
 
 The Cortex-M interrupts priorities always need to be explicitly defined when [using freeRTOS API functions](https://www.freertos.org/Documentation/02-Kernel/03-Supported-devices/04-Demos/ARM-Cortex/RTOS-Cortex-M3-M4#relevance-when-using-the-rtos-2):
