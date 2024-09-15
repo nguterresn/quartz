@@ -17,7 +17,7 @@ The SysTick, or SYSTICK, is a built-in 24-bit count down system timer presented 
 
 The SysTick also acts as an exception, in parallel with, for example, an _Interrupt Request_ (IRQ). The exception, when _triggered_, is then managed by the _Nested Vectored Interrupt Controller_ (NVIC) and dispatched according to its priority.
 
-### The importance of SysTick in a RTOS environment
+### The importance of SysTick calibration
 
 This system timer happens to be extremely important due to its goal — to be used by an RTOS or as a portable basic timer. According to the datasheet of the STM32F030R8:
 
