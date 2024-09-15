@@ -29,15 +29,17 @@ A reference time of 1ms is a perfect match for RTOS context switching!
 > [!note]
 > The calibration value differs between different Cortex-M, and so does fHCLK.
 
-By default, the STM32F030R8 has its HCLK or HSI (High Speed Internal) clock, set as 8MHz.
+By default, the STM32F030R8 has its HCLK or [HSI](https://www.embeddedhow.com/post/understanding-clock-source-in-arm-cortex-m) (High Speed Internal) clock, set as 8MHz.
 
 ![fHCLK_HSI](../img/fHCLKHSI.jpg)
 
-Reading from the left to the right, the HSI is then divided by 8 to output the Cortex system timer, the SysTick. This flow results in a timer of 1KHz, or 1ms, as presented above.
+Reading from the left to the right, the HSI is then divided by 8 to output the Cortex system timer, the SysTick. This flow results in a timer of 1MHz, or 1us.
 However, the frequency at which the SysTick runs, can change by:
 
 - Selecting (SW) the PLLCLK or HSE.
 - Setting a different HPRE (a prescaler) for SYSCLK.
+
+In a case where SYSCLK is 64MHz, the frequency of the SysTick clock is 8MHz (assuming the prescaler doesn't change).
 
 ### HAL_InitTick
 
