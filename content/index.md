@@ -16,6 +16,7 @@ Check my <a href="download/NunoNogueira_CV2024.pdf" download="NunoNogueiraCV.pdf
 
 ### On 2024
 
+- [SysTick, Priorities and HAL](stm32/systick.md)
 - [The significance of handling errors gracefully](the-significance-gracefull-errors.md)
 - [A Bullet list about Rust](rust-chars.md)
 - [How to drive a 2 wheels bot](battlebutbot/2wd-bot.md)
