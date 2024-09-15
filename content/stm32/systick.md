@@ -165,6 +165,7 @@ The Cortex-M interrupts priorities always need to be explicitly defined when [us
 Another very important aspect of priorities with freeRTOS, is which priority to provide to freeRTOS to create a critical section:
 
 > The RTOS interrupt nesting scheme splits the available interrupt priorities into two groups - those that will get masked by RTOS critical sections, and those that are never masked by RTOS critical sections and are therefore always enabled.
+
 > The RTOS kernel creates a critical section by writing the configMAX_SYSCALL_INTERRUPT_PRIORITY value into the ARM Cortex-M BASEPRI register. As priority 0 interrupts (the highest priority possible) cannot be masked using BASEPRI, configMAX_SYSCALL_INTERRUPT_PRIORITY must not be set to 0.
 
 In short, `configMAX_SYSCALL_INTERRUPT_PRIORITY` cannot be set to zero and should be set to a priority in which any priority below is expected be masked (suspended).
