@@ -106,7 +106,7 @@ if (TickPriority < (1UL << __NVIC_PRIO_BITS))
 This is quite important! This change of priority means that the SysTick will suspend any Interrupt Service Routine (ISR) from running as long as SysTick is being executed.
 
 > [!note]
-> The frequency of the system clock might change after the SysTick is first set. For example, the HAL for the STM32F030R8 first sets SysTick at a frequency of 8MHz and following time at 48MHz. The priority remains.
+> The frequency of the system clock might change after the SysTick is first set. For example, the HAL of STM32F030R8 sets first the SysTick at a frequency of 8MHz and follows by changing it to 48MHz later. The priority remains.
 
 Finally, anytime SysTick is triggered, SysTick_Handler is called:
 
