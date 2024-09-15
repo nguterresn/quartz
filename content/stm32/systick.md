@@ -146,6 +146,8 @@ The priority of the SysTick IRQ is key here. The ST HAL uses the SysTick for its
 
 The languague is odd, but the `TICK_INT_PRIORITY` is actually set to the highest priority (numerically the lowest). Having a high priority for the SysTick is effective for maintaining precise time tracking, but it can result in frequent interruptions of lower-priority tasks.
 
+In case precise time tracking is a requirement, the setup of another timer could be a solution.
+
 ### Priorities with freeRTOS
 
 The popular freeRTOS uses SysTick as its tick interrupt and it is [recommended](https://forums.freertos.org/t/systick-priority-vs-all-cortex-m-priorities/9289/2) to keep the priority **low**.
@@ -161,4 +163,35 @@ Another very important aspect of priorities with freeRTOS, is which priority to 
 > The RTOS kernel creates a critical section by writing the configMAX_SYSCALL_INTERRUPT_PRIORITY value into the ARM Cortex-M BASEPRI register. As priority 0 interrupts (the highest priority possible) cannot be masked using BASEPRI, configMAX_SYSCALL_INTERRUPT_PRIORITY must not be set to 0.
 
 In short, `configMAX_SYSCALL_INTERRUPT_PRIORITY` cannot be set to zero and should be set to a priority in which any priority below is expected be masked (suspended).
+
+As an example, in a case where there are 4 priority degrees (0, 1, 2 and 3) and `configMAX_SYSCALL_INTERRUPT_PRIORITY` is equal to 1, it means any interrupt below priority 1 (2 and 3) will be masked.
+
+In some cases, when porting freeRTOS, a new `SysTick_Handler` is given. For example, for a Cortex-M33:
+
+```c
+void SysTick_Handler( void ) /* PRIVILEGED_FUNCTION */
+{
+    uint32_t ulPreviousMask;
+
+    ulPreviousMask = portSET_INTERRUPT_MASK_FROM_ISR();
+    {
+        /* Increment the RTOS tick. */
+        if( xTaskIncrementTick() != pdFALSE )
+        {
+            /* Pend a context switch. */
+            portNVIC_INT_CTRL_REG = portNVIC_PENDSVSET_BIT;
+        }
+    }
+    portCLEAR_INTERRUPT_MASK_FROM_ISR( ulPreviousMask );
+}
+```
+
+This means the SysTick is only used for freeRTOS and not for the ST HAL anymore!
+The function `HAL_InitTick` needs to be defined again and must use another timer.
+
+That being said, a common scenario is:
+
+- freeRTOS uses SysTick with a/the low/lowest priority.
+- HAL uses another basic timer to manage delays and timeouts
+- Another timer might be necessary to achieve precise timing tracking
 
