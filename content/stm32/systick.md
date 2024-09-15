@@ -141,7 +141,7 @@ The languague is odd, but the `TICK_INT_PRIORITY` is actually set to the highest
 The popular freeRTOS uses SysTick as its tick interrupt and it is [recommended](https://forums.freertos.org/t/systick-priority-vs-all-cortex-m-priorities/9289/2) to keep the priority low.
 This might result in some timing jitter but will ensure the remaining tasks work as expected.
 
-Other very important aspect of the Cortex-M interrupts priorities is how they always need to be explicitly defined when using freeRTOS API functions:
+Other very important aspect of the Cortex-M interrupts priorities is how they always need to be explicitly defined when [using freeRTOS API functions](https://www.freertos.org/Documentation/02-Kernel/03-Supported-devices/04-Demos/ARM-Cortex/RTOS-Cortex-M3-M4#relevance-when-using-the-rtos-2):
 
 > Cortex-M interrupts default to having a priority value of zero. Zero is the highest possible priority value. Therefore, never leave the priority of an interrupt that uses the interrupt safe RTOS API at its default value.
 
