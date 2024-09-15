@@ -17,6 +17,8 @@ The SysTick, or SYSTICK, is a built-in 24-bit count down system timer presented 
 
 The SysTick also acts as an exception, in parallel with, for example, an _Interrupt Request_ (IRQ). The exception, when _triggered_, is then managed by the _Nested Vectored Interrupt Controller_ (NVIC) and dispatched according to its priority.
 
+### The importance of SysTick in a RTOS environment
+
 This system timer happens to be extremely important due to its goal — to be used by an RTOS or as a portable basic timer. According to the datasheet of the STM32F030R8:
 
 > The SysTick calibration value is set to 6000, which gives a reference time base of 1 ms with
@@ -38,3 +40,49 @@ However, the frequency at which the SysTick runs, can change by:
 - Setting a different HPRE (a prescaler) for SYSCLK.
 
 ### HAL_InitTick
+
+Before jumping into a RTOS environment, let's take a first look at a simple HAL implementation and its use of SysTick.
+
+The function `HAL_Init` is the first function to run to initialize the ST HAL. Interesting enough, even before the peripherals are initialized, the SysTick is set:
+
+```c
+HAL_StatusTypeDef HAL_Init(void)
+{
+  /* Use systick as time base source and configure 1ms tick (default clock after Reset is HSI) */
+
+  HAL_InitTick(TICK_INT_PRIORITY);
+
+  /* Init the low level hardware */
+  HAL_MspInit();
+
+  /* Return function status */
+  return HAL_OK;
+}
+```
+
+Let's then take a deeper look inside `HAL_InitTick`:
+
+```c
+__weak HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
+{
+  /*Configure the SysTick to have interrupt in 1ms time basis*/
+  if (HAL_SYSTICK_Config(SystemCoreClock / (1000U / uwTickFreq)) > 0U)
+  {
+    return HAL_ERROR;
+  }
+
+  /* Configure the SysTick IRQ priority */
+  if (TickPriority < (1UL << __NVIC_PRIO_BITS))
+  {
+    HAL_NVIC_SetPriority(SysTick_IRQn, TickPriority, 0U);
+    uwTickPrio = TickPriority;
+  }
+  else
+  {
+    return HAL_ERROR;
+  }
+
+   /* Return function status */
+  return HAL_OK;
+}
+```
