@@ -144,7 +144,9 @@ The priority of the SysTick IRQ is key here. The ST HAL uses the SysTick for its
 /*  and HAL_GetTick() usage under interrupt context          */
 ```
 
-The languague is odd, but the `TICK_INT_PRIORITY` is actually set to the highest priority (numerically the lowest).
+The languague is odd, but the `TICK_INT_PRIORITY` is actually set to the highest priority (numerically the lowest). Having a high priority for the SysTick is effective for maintaining precise time tracking, but it can result in frequent interruptions of lower-priority tasks.
+
+### Priorities with freeRTOS
 
 The popular freeRTOS uses SysTick as its tick interrupt and it is [recommended](https://forums.freertos.org/t/systick-priority-vs-all-cortex-m-priorities/9289/2) to keep the priority low.
 This might result in some timing jitter but will ensure the remaining tasks work as expected.
