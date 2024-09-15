@@ -116,7 +116,7 @@ This is quite important! This change of priority means that the SysTick will sus
 > [!note]
 > The frequency of the system clock might change after the SysTick is first set. For example, the HAL of STM32F030R8 sets first the SysTick at a frequency of 8MHz and follows by changing it to 48MHz later. The priority remains.
 
-Finally, anytime SysTick is triggered, SysTick_Handler is called:
+Finally, anytime SysTick is triggered, `SysTick_Handler` is called:
 
 ```c
 void SysTick_Handler(void)
