@@ -148,12 +148,17 @@ The languague is odd, but the `TICK_INT_PRIORITY` is actually set to the highest
 
 ### Priorities with freeRTOS
 
-The popular freeRTOS uses SysTick as its tick interrupt and it is [recommended](https://forums.freertos.org/t/systick-priority-vs-all-cortex-m-priorities/9289/2) to keep the priority low.
+The popular freeRTOS uses SysTick as its tick interrupt and it is [recommended](https://forums.freertos.org/t/systick-priority-vs-all-cortex-m-priorities/9289/2) to keep the priority **low**.
 This might result in some timing jitter but will ensure the remaining tasks work as expected.
 
-Other very important aspect of the Cortex-M interrupts priorities is how they always need to be explicitly defined when [using freeRTOS API functions](https://www.freertos.org/Documentation/02-Kernel/03-Supported-devices/04-Demos/ARM-Cortex/RTOS-Cortex-M3-M4#relevance-when-using-the-rtos-2):
+The Cortex-M interrupts priorities always need to be explicitly defined when [using freeRTOS API functions](https://www.freertos.org/Documentation/02-Kernel/03-Supported-devices/04-Demos/ARM-Cortex/RTOS-Cortex-M3-M4#relevance-when-using-the-rtos-2):
 
 > Cortex-M interrupts default to having a priority value of zero. Zero is the highest possible priority value. Therefore, never leave the priority of an interrupt that uses the interrupt safe RTOS API at its default value.
 
+Another very important aspect of priorities with freeRTOS, is which priority to provide to freeRTOS to create a critical section:
 
+> The RTOS interrupt nesting scheme splits the available interrupt priorities into two groups - those that will get masked by RTOS critical sections, and those that are never masked by RTOS critical sections and are therefore always enabled.
+> The RTOS kernel creates a critical section by writing the configMAX_SYSCALL_INTERRUPT_PRIORITY value into the ARM Cortex-M BASEPRI register. As priority 0 interrupts (the highest priority possible) cannot be masked using BASEPRI, configMAX_SYSCALL_INTERRUPT_PRIORITY must not be set to 0.
+
+In short, `configMAX_SYSCALL_INTERRUPT_PRIORITY` cannot be set to zero and should be set to a priority in which any priority below is expected be masked (suspended).
 
