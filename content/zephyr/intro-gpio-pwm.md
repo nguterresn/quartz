@@ -148,7 +148,6 @@ To make things easier, an alias can then be created to access the `ledc0` node.
 Finally, the code will look as such:
 
 ```c
-
 #include <stdio.h>
 #include <zephyr/kernel.h>
 #include <zephyr/sys/printk.h>
@@ -160,21 +159,17 @@ static const struct device* ledc0_dev = DEVICE_DT_GET(DT_ALIAS(led));
 
 int main(void)
 {
-	printf("Hello World! %s\n", CONFIG_BOARD_TARGET);
-
 	if (!device_is_ready(ledc0_dev)) {
 		printk("Error: ledc0_dev device is not ready\n");
 		return -1;
 	}
-
+  
 	// Set PWM signal
 	int ret = pwm_set(ledc0_dev, 0, 1000, 500, PWM_POLARITY_NORMAL);
 	if (ret < 0) {
 		printk("Error: Failed to set PWM signal (err %d)\n", ret);
 		return -1;
 	}
-
-	printk("All good!\n");
 	return 0;
 }
 ```
