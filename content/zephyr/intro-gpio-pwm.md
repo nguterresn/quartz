@@ -115,8 +115,11 @@ To use the esp-ledc driver, the peripheral `lec0` , that is defined in `esp32_co
 };
 ```
 
-!!! Note
-  The GPIO2 needs first to support the peripheral (or vice-versa) before it can be assigned to a pinctrl (hence, `LEDC_CH0_GPIO2`, _ledc channel 0 at GPIO2_). Some peripherals may not be supported for some other GPIOs.
+
+
+> [!info]
+>
+> The GPIO2 needs first to support the peripheral (or vice-versa) before it can be assigned to a pinctrl (hence, `LEDC_CH0_GPIO2`, _ledc channel 0 at GPIO2_). Some peripherals may not be supported for some other GPIOs.
 
 A pinctrl node, such as the `ledc0_default`, can be then assigned to an existing interface (ledc0) that [expects a pinctrl](https://docs.zephyrproject.org/latest/build/dts/api/bindings/pwm/espressif%2Cesp32-ledc.html).
 
@@ -163,7 +166,7 @@ int main(void)
 		printk("Error: ledc0_dev device is not ready\n");
 		return -1;
 	}
-  
+
 	// Set PWM signal
 	int ret = pwm_set(ledc0_dev, 0, 1000, 500, PWM_POLARITY_NORMAL);
 	if (ret < 0) {
