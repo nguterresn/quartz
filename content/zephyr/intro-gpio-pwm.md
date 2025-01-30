@@ -39,8 +39,26 @@ Reading all the files is quite a challenging.
 
 Since esp32 already comes with two GPIO interfaces defined, `gpio0` and `gpio1` , any GPIO can be accessed from the code:
 
-```c
+```dts
+// from esp32_common.dtsi
 
+gpio0: gpio@3ff44000 {
+  compatible = "espressif,esp32-gpio";
+  gpio-controller;
+  #gpio-cells = <2>;
+  reg = <0x3ff44000 0x800>;
+  interrupts = <GPIO_INTR_SOURCE IRQ_DEFAULT_PRIORITY 0>;
+  interrupt-parent = <&intc>;
+  /* Maximum available pins (per port)
+    * Actual occupied pins are specified
+    * on part number dtsi level, using
+    * the `gpio-reserved-ranges` property.
+    */
+  ngpios = <32>;   /* 0..31 */
+};
+```
+
+```c
 #include <stdio.h>
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/kernel.h>
@@ -52,13 +70,10 @@ static const struct device* gpio2 = DEVICE_DT_GET(DT_NODELABEL(gpio0));
 
 int main(void)
 {
-	printf("Hello World! %s\n", CONFIG_BOARD_TARGET);
-
 	if (!device_is_ready(gpio2)) {
 		printk("Error: gpio2 device is not ready\n");
 		return -1;
 	}
-
 	// Configure GPIO 2 as output
 	gpio_pin_configure(gpio2, 2, GPIO_OUTPUT);
 
@@ -68,10 +83,6 @@ int main(void)
 		gpio_pin_set(gpio2, 2, 0);
 		k_msleep(1000);
 	}
-
-	// Set GPIO 2 high
-	printk("All good!\n");
-
 	return 0;
 }
 ```
@@ -104,7 +115,8 @@ To use the esp-ledc driver, the peripheral `lec0` , that is defined in `esp32_co
 };
 ```
 
-The GPIO2 needs first to support the peripheral (or vice-versa) before it can be assigned to a pinctrl (hence, `LEDC_CH0_GPIO2`, _ledc channel 0 at GPIO2_). Some peripherals may not be supported for some other GPIOs.
+!!! Note
+  The GPIO2 needs first to support the peripheral (or vice-versa) before it can be assigned to a pinctrl (hence, `LEDC_CH0_GPIO2`, _ledc channel 0 at GPIO2_). Some peripherals may not be supported for some other GPIOs.
 
 A pinctrl node, such as the `ledc0_default`, can be then assigned to an existing interface (ledc0) that [expects a pinctrl](https://docs.zephyrproject.org/latest/build/dts/api/bindings/pwm/espressif%2Cesp32-ledc.html).
 
