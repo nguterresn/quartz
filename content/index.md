@@ -13,8 +13,11 @@ field. My hobbyist side also works with PCB & CAD Design.
 Check my <a href="download/NunoNogueira_CV2024.pdf" download="NunoNogueiraCV.pdf">_curriculum vitae_</a>.
 
 ---
+### 2025
 
-### On 2024
+- [Intro to Zephyr, GPIO and PWM on esp32](zephyr/intro-gpio-pwm.md)
+
+### 2024
 
 - [SysTick, Priorities and HAL](stm32/systick.md)
 - [The significance of handling errors gracefully](the-significance-gracefull-errors.md)
@@ -28,19 +31,19 @@ Check my <a href="download/NunoNogueira_CV2024.pdf" download="NunoNogueiraCV.pdf
 - [A web browser robot controller](browser-robot-controller.md)
 - [How to simulate LGVL using SDL2 on VSCode (MacOS)](lgvl-simulator-vscode-macos.md)
 
-### On 2023
+### 2023
 
 - [The basics of CMake](cmake/cmake-basics.md)
 - [Control the ka3005p power supply with an Arduino Due](psu-ka3005p-due.md)
 - [Board to help you test end of line on your access control system](end-of-line-board.md)
 
-### On 2022
+### 2022
 
 - [How can you make your own portable Smoke Extractor](smoke-extractor.md)
 - [Data Line Protection using Diodes - How to protect your Microcontroller IO](data-line-protection.md)
 - [How to read a datasheet and how it can be misleading (MCP73827)](how-datasheets-can-be-misleading.md)
 
-### On 2021
+### 2021
 
 <!-- - [Year 2021 Recapitulation](year-2021-recap.md) -->
 
@@ -53,7 +56,7 @@ Check my <a href="download/NunoNogueira_CV2024.pdf" download="NunoNogueiraCV.pdf
 - [Compile, Program, Build and Run a FPGA using Python scripts](fpga-python-script.md)
 - [Matrix Led telling how good you are at playing League of Legends](matrix-led-lol.md)
 
-### On 2020
+### 2020
 
 - [Sensor Monitoring using FPGA connected to ADC (LTC2308) - Eclipse Side](sensor-monitoring-fpga-adc-ltc2308-eclipse.md)
 - [Sensor Monitoring using FPGA connected to ADC (LTC2308) - Quartus Side](sensor-monitoring-fpga-adc-ltc2308.md)
