@@ -18,6 +18,7 @@ const config: QuartzConfig = {
     baseUrl: "nguterresn.github.io/quartz",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
+    generateSocialImages: false,
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
