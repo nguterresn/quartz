@@ -1,5 +1,5 @@
 ---
-title: Zephyr is as convenient as it gets.
+title: Zephyr is as convenient as it gets (libc, flash map and WiFi)
 tags:
   - esp32
   - Zephyr
