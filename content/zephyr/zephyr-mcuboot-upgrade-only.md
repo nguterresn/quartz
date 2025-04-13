@@ -1,7 +1,7 @@
 ---
 title: Zephyr and MCUBoot upgrade only
 tags:
-  - zephyr
+  - Zephyr
   - esp32
   - mcuboot
 date: "2025-04-13"
