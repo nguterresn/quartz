@@ -16,7 +16,7 @@ Check my <a href="download/NunoNogueira_CV2024.pdf" download="NunoNogueiraCV.pdf
 
 ### 2025
 
-* [Zephyr and MCUBoot - Simple upgrade only](zephyr/zephyr-mcuboot-upgrade-only.md.md)
+* [Zephyr and MCUBoot - Simple upgrade only](zephyr/zephyr-mcuboot-upgrade-only.md)
 * [Zephyr flash management](zephyr/zephyr-flash-management.md)
 * [Zephyr is as convenient as it gets (libc, flash map and WiFi)](zephyr/zephyr-is-convenient.md)
 * [Intro to Zephyr, GPIO and PWM on esp32](zephyr/intro-gpio-pwm.md)
