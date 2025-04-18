@@ -16,6 +16,7 @@ Check my <a href="download/NunoNogueira_CV2024.pdf" download="NunoNogueiraCV.pdf
 
 ### 2025
 
+* [Zephyr and MCUBoot - How to sign and boot validated firmware](zephyr/zephyr-mcuboot-signature.md)
 * [Zephyr and MCUBoot - Simple upgrade only](zephyr/zephyr-mcuboot-upgrade-only.md)
 * [Zephyr flash management](zephyr/zephyr-flash-management.md)
 * [Zephyr is as convenient as it gets (libc, flash map and WiFi)](zephyr/zephyr-is-convenient.md)
