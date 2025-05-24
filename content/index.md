@@ -7,7 +7,7 @@ date: "2024-02-03"
 
 Embedded Software Developer focused on making things. I've acquired experience with
 microcontrollers, Linux, LVGL and real time operating systems with a strong link
-between the device and the cloud. Mostly developing on C, AssemblyScript, CMake and a sparkle of WebAssembly. I successfully build, test and maintain code for systems on the
+between the device and the cloud. Developing mostly in C, AssemblyScript, CMake and a sparkle of WebAssembly. I successfully build, test and maintain code for systems on the
 field. My hobbyist side also works with PCB & CAD Design.
 
 Check my <a href="download/NunoNogueira_CV2024.pdf" download="NunoNogueiraCV.pdf">_curriculum vitae_</a>.
@@ -16,6 +16,7 @@ Check my <a href="download/NunoNogueira_CV2024.pdf" download="NunoNogueiraCV.pdf
 
 ### 2025
 
+* [How to build a simple 4WD Robot](robot4wd.md)
 * [Zephyr and MCUBoot - How to sign and boot validated firmware](zephyr/zephyr-mcuboot-signature.md)
 * [Zephyr and MCUBoot - Simple upgrade only](zephyr/zephyr-mcuboot-upgrade-only.md)
 * [Zephyr flash management](zephyr/zephyr-flash-management.md)
