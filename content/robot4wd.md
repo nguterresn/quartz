@@ -1,11 +1,11 @@
 ---
 title: How to build a simple 4WD Robot
 tags:
-  + PCB Design
-  + CAD Design
-  + Robotics
-  + esp32
-  + nRF24
+  - PCB Design
+  - CAD Design
+  - Robotics
+  - esp32
+  - nRF24
 date: "2025-05-24"
 ---
 
