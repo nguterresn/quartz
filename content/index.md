@@ -16,7 +16,7 @@ Check my <a href="download/NunoNogueira_CV2024.pdf" download="NunoNogueiraCV.pdf
 
 ### 2025
 
-* [My first Rust Crate (esp_ws2812_b)](rust/my-rust-first-crate.md.md)
+* [My first Rust Crate (esp_ws2812_b)](rust/my-rust-first-crate.md)
 * [How to build a simple 4WD Robot](robot4wd.md)
 * [Zephyr and MCUBoot - How to sign and boot validated firmware](zephyr/zephyr-mcuboot-signature.md)
 * [Zephyr and MCUBoot - Simple upgrade only](zephyr/zephyr-mcuboot-upgrade-only.md)
