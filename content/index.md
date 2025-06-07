@@ -7,7 +7,7 @@ date: "2024-02-03"
 
 Embedded Software Developer with hands-on experience in microcontrollers and real-time operating systems, emphasizing device-to-cloud connectivity. Proficient in C, CMake, AssemblyScript and a sprinkle of Rust, with a proven track record of building, testing, and maintaining robust field-deployed systems. Also engaged in PCB and CAD design as an hobby.
 
-Check my <a href="download/NunoNogueira_CV2024.pdf" download="NunoNogueiraCV.pdf">_curriculum vitae_</a>.
+Check my <a href="download/NunoNogueiraCV2025.pdf" download="NunoNogueiraCV.pdf">_curriculum vitae_</a>.
 
 ---
 
