@@ -5,10 +5,7 @@ date: "2024-02-03"
 
 ### About me
 
-Embedded Software Developer focused on making things. I've acquired experience with
-microcontrollers, Linux, LVGL and real time operating systems with a strong link
-between the device and the cloud. Developing mostly in C, AssemblyScript, CMake and a sparkle of WebAssembly. I successfully build, test and maintain code for systems on the
-field. My hobbyist side also works with PCB & CAD Design.
+Embedded Software Developer with hands-on experience in microcontrollers and real-time operating systems, emphasizing device-to-cloud connectivity. Proficient in C, CMake, AssemblyScript and a sprinkle of Rust, with a proven track record of building, testing, and maintaining robust field-deployed systems. Also engaged in PCB and CAD design as an hobby.
 
 Check my <a href="download/NunoNogueira_CV2024.pdf" download="NunoNogueiraCV.pdf">_curriculum vitae_</a>.
 
