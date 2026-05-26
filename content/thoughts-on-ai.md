@@ -1,7 +1,7 @@
 ---
 title: My thoughts on AI
 tags:
-  + AI
+  - AI
 date: "2026-05-26"
 ---
 

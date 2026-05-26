@@ -11,6 +11,10 @@ Check my <a href="download/NunoNogueiraCV2025.pdf" download="NunoNogueiraCV.pdf"
 
 ---
 
+### 2026
+
+* [My thoughts on AI](./thoughts-on-ai.md)
+
 ### 2025
 
 * [My first Rust Crate (esp_ws2812_b)](rust/my-rust-first-crate.md)
