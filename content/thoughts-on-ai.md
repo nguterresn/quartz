@@ -11,9 +11,9 @@ I was pretty happy where _tech_ was going until agentic AI became a thing. I thi
 
 When I started taking coding more seriously, I read somewhere a developer spends 99% of its time reading code and 1% writing code. In my experience the numbers may not be exact those, but I don't think they differ that much. Plus, writing is slower than reading, providing a good time window for a solid chain of thoughts.
 
-Now, with the consecutive use of agentic AI we lose track of the changes. There's no knowledge retained. It is not done by us, it is purely AI. We cannot think that whatever AI outputs mirrors our knowledge. Coding is not a skill as easy as learning how to cycle or how to read. The celing is much higher. There are developers with 20+ years of experience still learning on the daily basis. The world changes quickly too and there are new things everyday. Therefore, coding is much more like running. As long as one keeps running, keeps improving, however, the moment ones stops, the coding skills start to rust (no pun intended!).
+Now, with the consecutive use of agentic AI we lose track of the changes. There's no knowledge retained. It is not done by us, it is purely AI. We cannot think whatever AI outputs mirrors our knowledge. Coding is a skill and it is not as easy as learning how to cycle. The celing is much higher. There are developers with 20+ years of experience still learning on the daily basis. The world changes quickly too and there are new things everyday. Therefore, coding is much more like running. As long as one keeps running, keeps improving, however, the moment ones stops, the coding skills start to rust (no pun intended!).
 
-That said, these are my predictions for the following times:
+That being said, these are my predictions for the following times:
 
 * AI models will keep getting slightly better
 * AI will eventually get too expensive (as of today, we still don't know how much AI actually costs without subsidizing)
@@ -22,3 +22,8 @@ That said, these are my predictions for the following times:
 * When vibe coding becomes no longer feasible, there will be an hangover transition for many developers.
 * AGI is a marketing scheme
 * There will be a market crash due to all the AI lies
+* There will be a shortage of senior engineers in 5 to 10 years.
+
+By no means I want to sound negative, but I do want to sound skeptical. That's how everyone should approach anything as recent as AI. We should value the knowledge we have retained so far and embrace new tools that may improve it, never the other way around.
+
+Once this fog goes away, it will be much easier to understand how should AI be used and where it actually shines. Then, humanity shall continue to improve onwards.
